@@ -379,25 +379,23 @@
     }
 
     .hero-card {
-      background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(220, 228, 238, 0.9);
-      border-radius: 24px;
-      padding: 18px;
-      box-shadow: var(--shadow);
-    }
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(220, 228, 238, 0.9);
+  border-radius: 28px;
+  padding: 12px;
+  box-shadow: 0 16px 36px rgba(11, 42, 74, 0.08);
+}
 
     .headshot-wrap {
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(31,95,168,0.14), transparent 22%),
-        linear-gradient(160deg, #dde8f6 0%, #f9fbfe 100%);
-      min-height: 520px;
-      display: flex;
-      align-items: end;
-      justify-content: center;
-    }
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #e6eef8 0%, #f9fbfe 100%);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
     .headshot-wrap::after {
       content: "";
@@ -409,10 +407,11 @@
     }
 
     .headshot-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  width: 88%;
+  height: 88%;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
     .badge-row {
       display: flex;
