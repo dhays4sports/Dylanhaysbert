@@ -280,56 +280,62 @@
     }
 
     .menu-toggle.active span:nth-child(3) {
-      transform: translateY(-6px) rotate(-.mobile-menu {
-  position: fixed;
-  top: var(--header-height);
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--navy);
-  color: white;
-  padding: 28px 24px 40px;
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 999;
-  overflow-y: auto;
-}
+      transform: translateY(-6px) rotate(-45deg);
+    }
 
-.mobile-menu.open {
-  display: flex;
-}
+    .mobile-menu {
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--navy);
+      color: white;
+      padding: 28px 24px 40px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+      overflow-y: auto;
+    }
 
-.mobile-menu a {
-  display: block;
-  font-size: 1.15rem;
-  font-weight: 700;
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
-  color: white;
-}
+    .mobile-menu.open {
+      display: flex;
+    }
 
-.mobile-menu a:last-of-type {
-  border-bottom: none;
-}
+    .mobile-menu a {
+      display: block;
+      font-size: 1.15rem;
+      font-weight: 700;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      color: white;
+    }
 
-.mobile-menu .btn {
-  margin-top: 14px;
-  width: 100%;
-  justify-content: center;
-}
+    .mobile-actions {
+      margin-top: 18px;
+      display: grid;
+      gap: 12px;
+    }
 
-.mobile-menu .btn-primary {
-  background: linear-gradient(135deg, var(--blue), var(--blue-2));
-  color: white;
-  border: none;
-}
+    .mobile-menu .btn {
+      width: 100%;
+      justify-content: center;
+      border-bottom: none;
+      padding: 0 22px;
+    }
 
-.mobile-menu .btn-ghost {
-  background: rgba(255,255,255,0.08);
-  color: white;
-  border: 1px solid rgba(255,255,255,0.18);
-}
+    .mobile-menu .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: white;
+      border: none;
+    }
+
+    .mobile-menu .btn-ghost {
+      background: rgba(255,255,255,0.08);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
 
     .hero {
       position: relative;
@@ -852,16 +858,16 @@
     </div>
 
     <div class="mobile-menu" id="mobileMenu">
-  <a href="#about">About</a>
-  <a href="#coverage">Coverage</a>
-  <a href="#review">Coverage Review</a>
-  <a href="#contact">Contact</a>
-    
-      <div class="btn-row" style="margin-top: 18px;">
-    <a class="btn btn-primary" href="tel:14088262465">Call (408) 826-2465</a>
-    <a class="btn btn-ghost" href="#contact">Get a Coverage Review</a>
-  </div>
-     </div> 
+      <a href="#about">About</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#review">Coverage Review</a>
+      <a href="#contact">Contact</a>
+
+      <div class="mobile-actions">
+        <a class="btn btn-primary" href="tel:14088262465">Call (408) 826-2465</a>
+        <a class="btn btn-ghost" href="#contact">Get a Coverage Review</a>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -1174,11 +1180,11 @@
     const mobileMenu = document.getElementById("mobileMenu");
 
     menuToggle?.addEventListener("click", () => {
-  const isOpen = mobileMenu.classList.toggle("open");
-  menuToggle.classList.toggle("active", isOpen);
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  document.body.classList.toggle("menu-open", isOpen);
-});
+      const isOpen = mobileMenu.classList.toggle("open");
+      menuToggle.classList.toggle("active", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      document.body.classList.toggle("menu-open", isOpen);
+    });
 
     mobileMenu?.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
