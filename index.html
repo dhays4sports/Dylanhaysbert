@@ -3,40 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dylan Haysbert | Insurance Producer</title>
+  <title>Dylan Haysbert | Insurance Agent</title>
   <meta
     name="description"
-    content="Get a fast insurance quote or coverage review from Dylan Haysbert. Auto, Home, Business, and Life Insurance with real advice and personal service."
+    content="Move fast. Stay proactive. Get a fast insurance quote or coverage review from Dylan Haysbert for auto, home, business, and life insurance."
   />
-  <meta name="theme-color" content="#0b2a4a" />
+  <meta name="theme-color" content="#0f1012" />
 
   <style>
     :root {
+      --bg: #0f1012;
+      --bg-soft: #16181c;
+      --panel: #121418;
+      --panel-2: #181b20;
+      --text: #f0e7d8;
+      --text-soft: #c7beb1;
+      --text-faint: #9c9489;
+      --line: rgba(240, 231, 216, 0.12);
+      --line-strong: rgba(240, 231, 216, 0.2);
+      --cream: #f0e7d8;
+      --blue: #8ba9d9;
       --farmers-red: #e1251b;
       --farmers-blue: #004990;
-      --farmers-blue-2: #1f5fa8;
-      --navy: #0b2a4a;
-      --white: #ffffff;
-      --bg: #f6f9fc;
-      --text: #162434;
-      --muted: #5f6d7d;
-      --border: #dbe5ef;
-      --success: #117a37;
-      --danger: #b3261e;
-      --shadow: 0 16px 40px rgba(11, 42, 74, 0.08);
-      --radius: 22px;
-      --max: 1120px;
+      --success: #8fd0a1;
+      --danger: #f19b9b;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max: 1160px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(139, 169, 217, 0.08), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(225, 37, 27, 0.06), transparent 20%),
+        linear-gradient(180deg, #0f1012 0%, #111317 100%);
       color: var(--text);
-      background: linear-gradient(180deg, #fbfdff 0%, #f4f8fc 100%);
-      line-height: 1.55;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
       overflow-x: hidden;
     }
 
@@ -50,7 +63,10 @@
       text-decoration: none;
     }
 
-    button, input, textarea, select {
+    button,
+    input,
+    textarea,
+    select {
       font: inherit;
     }
 
@@ -60,55 +76,72 @@
     }
 
     .section {
-      padding: 64px 0;
+      padding: 88px 0;
     }
 
     .eyebrow {
       display: inline-block;
       margin-bottom: 14px;
+      color: var(--blue);
       font-size: 0.82rem;
       font-weight: 800;
-      letter-spacing: 0.11em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--farmers-blue-2);
     }
 
     h1, h2, h3 {
       margin: 0 0 14px;
-      line-height: 1.06;
-      letter-spacing: -0.02em;
-      color: var(--navy);
+      color: var(--cream);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
     }
 
     h1 {
-      font-size: clamp(2.45rem, 7vw, 4.4rem);
+      font-size: clamp(2.8rem, 7vw, 5.4rem);
+      font-weight: 900;
     }
 
     h2 {
-      font-size: clamp(1.95rem, 4.8vw, 2.8rem);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
     }
 
     h3 {
-      font-size: 1.16rem;
+      font-size: 1.18rem;
+      font-weight: 800;
     }
 
     p {
       margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 1.02rem;
+      color: var(--text-soft);
+      font-size: 1.03rem;
+    }
+
+    .lead {
+      font-size: 1.12rem;
+      max-width: 58ch;
+      color: var(--text-soft);
+    }
+
+    .script {
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--blue);
     }
 
     .site-header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,0.92);
+      border-bottom: 1px solid rgba(240, 231, 216, 0.08);
+      background: rgba(15, 16, 18, 0.82);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(219, 229, 239, 0.85);
     }
 
     .nav {
-      min-height: 78px;
+      min-height: 80px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -122,7 +155,7 @@
     }
 
     .brand-logo {
-      height: 64px;
+      height: 62px;
       width: auto;
       display: block;
     }
@@ -137,7 +170,6 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       min-height: 54px;
       padding: 0 22px;
       border-radius: 999px;
@@ -153,8 +185,8 @@
     }
 
     .btn-primary {
-      color: var(--white);
-      background: linear-gradient(135deg, var(--farmers-blue), var(--farmers-blue-2));
+      background: var(--cream);
+      color: #111317;
       box-shadow: var(--shadow);
     }
 
@@ -163,79 +195,66 @@
     }
 
     .btn-secondary {
-      background: var(--white);
-      color: var(--navy);
-      border-color: var(--border);
+      color: var(--cream);
+      background: transparent;
+      border-color: rgba(240, 231, 216, 0.18);
     }
 
     .btn-secondary:hover {
-      border-color: var(--farmers-blue-2);
-      color: var(--farmers-blue-2);
-    }
-
-    .btn-dark {
-      background: var(--navy);
-      color: var(--white);
+      border-color: rgba(139, 169, 217, 0.6);
+      color: var(--blue);
     }
 
     .hero {
       position: relative;
-      overflow: hidden;
-      padding: 56px 0 24px;
-      background:
-        radial-gradient(circle at 14% 14%, rgba(0, 73, 144, 0.12), transparent 24%),
-        radial-gradient(circle at 88% 14%, rgba(225, 37, 27, 0.08), transparent 18%),
-        radial-gradient(circle at 84% 84%, rgba(31, 95, 168, 0.08), transparent 20%),
-        linear-gradient(180deg, #fbfdff 0%, #f2f7fc 100%);
+      padding: 72px 0 36px;
     }
 
     .hero::before {
       content: "";
       position: absolute;
       top: 0;
-      left: -10%;
-      width: 120%;
-      height: 6px;
-      background: linear-gradient(90deg, var(--farmers-red), var(--farmers-blue), #7ea9d8);
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--farmers-red), var(--farmers-blue), var(--blue));
       opacity: 0.95;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 32px;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 34px;
       align-items: center;
     }
 
     .hero-copy {
-      max-width: 650px;
+      max-width: 700px;
     }
 
-    .scan-line {
+    .micro-pill {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 16px;
-      padding: 8px 12px;
-      background: rgba(255,255,255,0.88);
-      border: 1px solid var(--border);
+      gap: 10px;
+      padding: 10px 14px;
+      margin-bottom: 18px;
       border-radius: 999px;
-      color: var(--navy);
-      font-size: 0.9rem;
-      font-weight: 800;
-      box-shadow: 0 8px 20px rgba(11, 42, 74, 0.04);
+      background: rgba(240, 231, 216, 0.06);
+      border: 1px solid rgba(240, 231, 216, 0.1);
+      color: var(--text);
+      font-size: 0.92rem;
+      font-weight: 700;
     }
 
-    .hero-brand {
+    .brand-row {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 18px;
+      margin-bottom: 22px;
       padding: 10px 14px;
-      background: rgba(255,255,255,0.88);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(11, 42, 74, 0.04);
+      border-radius: 18px;
+      background: rgba(240, 231, 216, 0.05);
+      border: 1px solid rgba(240, 231, 216, 0.1);
     }
 
     .farmers-logo {
@@ -244,43 +263,48 @@
       display: block;
     }
 
-    .hero-brand-text {
-      color: var(--navy);
-      font-size: 0.95rem;
+    .brand-row-copy {
+      line-height: 1.15;
+      font-size: 0.92rem;
       font-weight: 800;
-      line-height: 1.2;
+      color: var(--cream);
     }
 
-    .hero-brand-text span {
+    .brand-row-copy span {
       display: block;
-      color: var(--muted);
-      font-size: 0.82rem;
+      margin-top: 3px;
+      font-size: 0.8rem;
+      color: var(--text-faint);
       font-weight: 700;
-      margin-top: 2px;
     }
 
-    .lead {
-      font-size: 1.08rem;
-      max-width: 54ch;
+    .hero-title-block {
+      margin-bottom: 18px;
+    }
+
+    .hero-title-top {
+      display: block;
+      color: var(--cream);
+    }
+
+    .hero-title-bottom {
+      display: block;
+      margin-top: 8px;
+      font-size: clamp(1.4rem, 3vw, 2rem);
     }
 
     .hero-buttons {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
       margin-top: 26px;
-      max-width: 560px;
-    }
-
-    .hero-buttons .full {
-      grid-column: 1 / -1;
     }
 
     .hero-note {
       margin-top: 16px;
-      font-size: 0.98rem;
+      color: var(--text-faint);
+      font-size: 0.95rem;
       font-weight: 700;
-      color: var(--navy);
     }
 
     .hero-badges {
@@ -291,29 +315,28 @@
     }
 
     .badge {
-      background: rgba(255,255,255,0.88);
-      border: 1px solid var(--border);
-      color: var(--navy);
       padding: 10px 14px;
       border-radius: 999px;
+      background: rgba(240, 231, 216, 0.05);
+      border: 1px solid rgba(240, 231, 216, 0.1);
+      color: var(--cream);
       font-size: 0.9rem;
       font-weight: 700;
-      box-shadow: 0 6px 16px rgba(11,42,74,0.04);
     }
 
     .hero-card {
-      background: rgba(255,255,255,0.96);
-      border: 1px solid rgba(219, 229, 239, 0.95);
-      border-radius: 28px;
       padding: 18px;
-      box-shadow: 0 20px 40px rgba(11, 42, 74, 0.08);
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(240, 231, 216, 0.1);
+      box-shadow: var(--shadow);
     }
 
     .hero-photo {
-      border-radius: 22px;
       overflow: hidden;
-      aspect-ratio: 4 / 4.35;
-      background: linear-gradient(160deg, #e7eff8 0%, #f9fbfe 100%);
+      border-radius: 22px;
+      aspect-ratio: 4 / 4.5;
+      background: linear-gradient(180deg, #15181d 0%, #0f1012 100%);
     }
 
     .hero-photo img {
@@ -326,102 +349,130 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      padding: 16px 4px 2px;
+      gap: 14px;
+      padding: 16px 4px 4px;
     }
 
     .hero-card-footer strong {
-      color: var(--navy);
+      display: block;
+      color: var(--cream);
       font-size: 1rem;
     }
 
     .hero-card-footer span {
       display: block;
-      color: var(--muted);
+      color: var(--text-faint);
       font-size: 0.9rem;
       font-weight: 700;
-      margin-top: 2px;
+      margin-top: 3px;
     }
 
-    .quick-bar {
-      padding: 16px 0;
-      background: var(--navy);
-      color: var(--white);
+    .quick-band {
+      padding: 20px 0;
+      border-top: 1px solid rgba(240, 231, 216, 0.08);
+      border-bottom: 1px solid rgba(240, 231, 216, 0.08);
+      background: rgba(255,255,255,0.02);
     }
 
     .quick-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      gap: 16px;
     }
 
     .quick-item {
       text-align: center;
+      color: var(--cream);
       font-weight: 700;
-      opacity: 0.98;
+      font-size: 0.96rem;
     }
 
     .section-header {
-      max-width: 720px;
-      margin-bottom: 24px;
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .section-header p {
+      max-width: 62ch;
     }
 
     .coverage-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
-      margin-top: 20px;
     }
 
     .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: 0 10px 24px rgba(11, 42, 74, 0.05);
+      padding: 24px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(240, 231, 216, 0.1);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.2);
     }
 
     .card-icon {
       width: 52px;
       height: 52px;
-      border-radius: 16px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, rgba(0,73,144,0.12), rgba(225,37,27,0.08));
-      color: var(--navy);
+      border-radius: 16px;
+      margin-bottom: 16px;
+      background: rgba(139, 169, 217, 0.08);
+      border: 1px solid rgba(139, 169, 217, 0.18);
+      color: var(--cream);
       font-size: 1.45rem;
-      margin-bottom: 14px;
     }
 
     .mini-proof {
       margin-top: 18px;
-      padding: 16px 18px;
-      background: var(--bg);
-      border: 1px solid var(--border);
+      padding: 18px 20px;
       border-radius: 18px;
-      color: var(--navy);
+      background: rgba(139, 169, 217, 0.07);
+      border: 1px solid rgba(139, 169, 217, 0.14);
+      color: var(--cream);
       font-weight: 700;
     }
 
-    .contact-section {
-      padding-top: 64px;
-      padding-bottom: 78px;
-      background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.5) 100%);
+    .quote-block {
+      padding: 88px 0;
     }
 
-    .contact-grid {
+    .quote-wrap {
       display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
+      grid-template-columns: 1.02fr 0.98fr;
       gap: 24px;
       align-items: start;
     }
 
+    .quote-panel,
     .contact-card {
-      background: var(--white);
-      border: 1px solid var(--border);
+      padding: 30px;
       border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 12px 28px rgba(11, 42, 74, 0.06);
+      background: linear-gradient(180deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(240, 231, 216, 0.1);
+      box-shadow: var(--shadow);
+    }
+
+    .quote-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .quote-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--text-soft);
+      font-weight: 600;
+    }
+
+    .quote-item::before {
+      content: "•";
+      color: var(--blue);
+      font-size: 1.1rem;
+      line-height: 1;
+      margin-top: 2px;
     }
 
     .contact-list {
@@ -431,24 +482,24 @@
     }
 
     .contact-item {
-      color: var(--text);
+      color: var(--cream);
       font-weight: 700;
       word-break: break-word;
     }
 
     .contact-item span {
-      color: var(--muted);
+      color: var(--text-faint);
       font-weight: 600;
       display: inline-block;
-      min-width: 78px;
+      min-width: 82px;
     }
 
     .contact-brand-block {
       margin-top: 22px;
       padding: 18px;
-      background: var(--bg);
-      border: 1px solid var(--border);
       border-radius: 18px;
+      background: rgba(240, 231, 216, 0.04);
+      border: 1px solid rgba(240, 231, 216, 0.09);
     }
 
     .contact-brand-row {
@@ -469,39 +520,44 @@
     }
 
     label {
-      font-size: 0.95rem;
+      color: var(--cream);
+      font-size: 0.94rem;
       font-weight: 800;
-      color: var(--navy);
     }
 
     input,
     textarea,
     select {
       width: 100%;
-      border: 1px solid var(--border);
-      border-radius: 14px;
       padding: 14px 16px;
-      color: var(--text);
-      background: var(--white);
+      border-radius: 14px;
+      border: 1px solid rgba(240, 231, 216, 0.12);
+      background: rgba(255,255,255,0.03);
+      color: var(--cream);
       outline: none;
       transition: 0.2s ease;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(240, 231, 216, 0.45);
     }
 
     input:focus,
     textarea:focus,
     select:focus {
-      border-color: var(--farmers-blue-2);
-      box-shadow: 0 0 0 4px rgba(31, 95, 168, 0.1);
+      border-color: rgba(139, 169, 217, 0.6);
+      box-shadow: 0 0 0 4px rgba(139, 169, 217, 0.12);
     }
 
     textarea {
-      min-height: 120px;
+      min-height: 130px;
       resize: vertical;
     }
 
     .form-note {
       font-size: 0.92rem;
-      color: var(--muted);
+      color: var(--text-faint);
       margin-top: 2px;
     }
 
@@ -515,21 +571,21 @@
     }
 
     .form-success {
-      background: rgba(17, 122, 55, 0.08);
+      background: rgba(143, 208, 161, 0.08);
       color: var(--success);
-      border: 1px solid rgba(17, 122, 55, 0.18);
+      border: 1px solid rgba(143, 208, 161, 0.18);
     }
 
     .form-error {
-      background: rgba(179, 38, 30, 0.08);
+      background: rgba(241, 155, 155, 0.08);
       color: var(--danger);
-      border: 1px solid rgba(179, 38, 30, 0.18);
+      border: 1px solid rgba(241, 155, 155, 0.18);
     }
 
     .site-footer {
-      border-top: 1px solid var(--border);
-      background: var(--white);
-      padding: 26px 0 34px;
+      padding: 28px 0 34px;
+      border-top: 1px solid rgba(240, 231, 216, 0.08);
+      background: rgba(0,0,0,0.12);
     }
 
     .footer-grid {
@@ -541,13 +597,13 @@
     }
 
     .footer-main {
-      color: var(--muted);
+      color: var(--text-soft);
       font-size: 0.95rem;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .footer-main strong {
-      color: var(--navy);
+      color: var(--cream);
     }
 
     .footer-actions {
@@ -559,15 +615,15 @@
     .license-note {
       margin-top: 18px;
       padding-top: 16px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
+      border-top: 1px solid rgba(240, 231, 216, 0.08);
+      color: var(--text-faint);
       font-size: 0.82rem;
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     @media (max-width: 980px) {
       .hero-grid,
-      .contact-grid {
+      .quote-wrap {
         grid-template-columns: 1fr;
       }
 
@@ -577,16 +633,13 @@
     }
 
     @media (max-width: 760px) {
-      .section {
-        padding: 56px 0;
+      .section,
+      .quote-block {
+        padding: 60px 0;
       }
 
       .hero {
-        padding: 48px 0 20px;
-      }
-
-      .hero-buttons {
-        grid-template-columns: 1fr;
+        padding: 50px 0 24px;
       }
 
       .quick-grid {
@@ -597,6 +650,11 @@
         grid-template-columns: 1fr;
       }
 
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
       .brand-logo {
         height: 54px;
       }
@@ -605,9 +663,10 @@
         display: none;
       }
 
+      .quote-panel,
       .contact-card,
       .card {
-        padding: 22px;
+        padding: 24px;
       }
     }
 
@@ -644,13 +703,13 @@
       <a href="#" class="brand" aria-label="Dylan Haysbert Home">
         <img
           src="images/dylan-haysbert-logo-4.PNG"
-          alt="Dylan Haysbert Insurance Producer"
+          alt="Dylan Haysbert Insurance Agent"
           class="brand-logo"
         />
       </a>
 
       <div class="header-actions">
-        <a class="btn btn-secondary" href="#contact">Get a Quote</a>
+        <a class="btn btn-secondary" href="#quote">Get a Quote</a>
         <a class="btn btn-primary" href="tel:14088262465">Call (408) 826-2465</a>
       </div>
     </div>
@@ -660,39 +719,45 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="scan-line">Visiting from my card? Start here.</div>
+          <div class="micro-pill">Visiting from my card? Start here.</div>
 
-          <div class="hero-brand">
+          <div class="brand-row">
             <img
               src="images/farmers-logo.png"
               alt="Farmers Insurance"
               class="farmers-logo"
             />
-            <div class="hero-brand-text">
+            <div class="brand-row-copy">
               Dylan Haysbert
-              <span>Insurance Producer</span>
+              <span>Insurance Agent</span>
             </div>
           </div>
 
-          <span class="eyebrow">Auto • Home • Business • Life</span>
-          <h1>Get a fast insurance quote in minutes</h1>
+          <div class="hero-title-block">
+            <h1>
+              <span class="hero-title-top">MOVE FAST.</span>
+              <span class="hero-title-bottom script">Stay Proactive.</span>
+            </h1>
+          </div>
+
           <p class="lead">
-            Better coverage. Real advice. Personal service. I help homeowners, families, and business owners get clear guidance, responsive support, and coverage that actually fits.
+            Fast quotes. Better coverage conversations. Real support. I help individuals,
+            families, and business owners handle insurance quickly and proactively without the usual runaround.
           </p>
 
           <div class="hero-buttons">
-            <a class="btn btn-primary" href="#contact">Get a Quote</a>
+            <a class="btn btn-primary" href="#quote">Get a Fast Quote</a>
             <a class="btn btn-secondary" href="tel:14088262465">Call or Text Me</a>
-            <a class="btn btn-dark full" href="#contact">Request a Coverage Review</a>
+            <a class="btn btn-secondary" href="#coverage">View Coverage</a>
           </div>
 
           <p class="hero-note">Usually responds within 30–60 minutes.</p>
 
           <div class="hero-badges">
-            <div class="badge">Serving California</div>
-            <div class="badge">Serving Oregon</div>
-            <div class="badge">Serving Washington</div>
-            <div class="badge">Personalized policy reviews</div>
+            <div class="badge">Auto</div>
+            <div class="badge">Home</div>
+            <div class="badge">Business</div>
+            <div class="badge">Life</div>
           </div>
         </div>
 
@@ -703,7 +768,7 @@
           <div class="hero-card-footer">
             <div>
               <strong>Dylan Haysbert</strong>
-              <span>Insurance Producer</span>
+              <span>Insurance Agent</span>
             </div>
             <img
               src="images/farmers-logo.png"
@@ -715,22 +780,23 @@
       </div>
     </section>
 
-    <section class="quick-bar" aria-label="Trust Highlights">
+    <section class="quick-band" aria-label="Highlights">
       <div class="container quick-grid">
         <div class="quick-item">Fast Quotes</div>
-        <div class="quick-item">Clear Coverage Advice</div>
+        <div class="quick-item">Stay Proactive</div>
         <div class="quick-item">Personal Service</div>
-        <div class="quick-item">Local Producer Support</div>
+        <div class="quick-item">Coverage That Fits</div>
       </div>
     </section>
 
     <section class="section" id="coverage">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Coverage Options</span>
-          <h2>Protection built around real life</h2>
+          <span class="eyebrow">Coverage</span>
+          <h2>Insurance built around real life</h2>
           <p>
-            Whether you need one policy or several, I can help you compare options clearly and find coverage that fits your needs and budget.
+            Whether you need one policy or several, I’ll help you move quickly, understand your options,
+            and make sure your coverage actually fits your life, your property, and your risk.
           </p>
         </div>
 
@@ -738,73 +804,68 @@
           <article class="card">
             <div class="card-icon">🚗</div>
             <h3>Auto Insurance</h3>
-            <p>Protection for your vehicles, liability exposure, and the people who ride with you.</p>
+            <p>
+              Protection for your vehicles, liability exposure, and the people who ride with you.
+            </p>
           </article>
 
           <article class="card">
             <div class="card-icon">🏠</div>
             <h3>Home Insurance</h3>
-            <p>Coverage for your home, belongings, and personal liability with attention to real rebuild needs.</p>
+            <p>
+              Coverage for your home, belongings, and personal liability with attention to real rebuild needs.
+            </p>
           </article>
 
           <article class="card">
             <div class="card-icon">🏢</div>
             <h3>Business Insurance</h3>
-            <p>Coverage designed around how your business actually operates, from property to liability and beyond.</p>
+            <p>
+              Coverage designed around how your business actually operates, from property to liability and beyond.
+            </p>
           </article>
 
           <article class="card">
             <div class="card-icon">❤️</div>
             <h3>Life Insurance</h3>
-            <p>Protection for the people who depend on you, built around your goals and long-term needs.</p>
+            <p>
+              Protection for the people who depend on you, built around your goals and long-term needs.
+            </p>
           </article>
         </div>
 
         <div class="mini-proof">
-          Looking for a second opinion on your current policy? I’m happy to review it with you and point out any major gaps or opportunities.
+          Looking for a second opinion on your current policy? I’m happy to review it and point out any major gaps, weak spots, or opportunities to improve it.
         </div>
       </div>
     </section>
 
-    <section class="contact-section" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-card">
-          <span class="eyebrow">Contact Dylan</span>
-          <h2>Let’s get you the right coverage</h2>
+    <section class="quote-block" id="quote">
+      <div class="container quote-wrap">
+        <div class="quote-panel">
+          <span class="eyebrow">Why Work With Me</span>
+          <h2>Fast, clear, proactive help</h2>
           <p>
-            Reach out for a quote, a second opinion, or a quick conversation about your current policy.
+            My job is not just to throw you a quote. It’s to help you move quickly, understand what you’re buying,
+            and make sure nothing important gets missed.
           </p>
 
-          <div class="contact-list">
-            <div class="contact-item"><span>Phone:</span> <a href="tel:14088262465">(408) 826-2465</a></div>
-            <div class="contact-item"><span>Email:</span> <a href="mailto:dylan@dodgeagencyinc.com">dylan@dodgeagencyinc.com</a></div>
-            <div class="contact-item"><span>Website:</span> <a href="https://dylanhaysbert.com">dylanhaysbert.com</a></div>
-            <div class="contact-item"><span>Serving:</span> CA • OR • WA</div>
-            <div class="contact-item"><span>CA Lic:</span> #4528400</div>
+          <div class="quote-list">
+            <div class="quote-item">Fast turnaround on quotes and coverage reviews</div>
+            <div class="quote-item">Clear explanations without the usual insurance jargon</div>
+            <div class="quote-item">Support for auto, home, business, and life insurance</div>
+            <div class="quote-item">Personalized help instead of generic call-center service</div>
+            <div class="quote-item">A proactive second opinion if you already have coverage</div>
           </div>
 
-          <div class="contact-brand-block">
-            <div class="contact-brand-row">
-              <img
-                src="images/farmers-logo.png"
-                alt="Farmers Insurance"
-                class="farmers-logo"
-              />
-              <div>
-                <strong style="color: var(--navy); display:block;">Farmers Insurance</strong>
-                <span style="color: var(--muted); font-size: 0.9rem; font-weight: 700;">Dylan Haysbert, Insurance Producer</span>
-              </div>
-            </div>
-          </div>
-
-          <div style="display:grid; gap:12px; margin-top:24px;">
+          <div class="hero-buttons" style="margin-top: 24px;">
             <a class="btn btn-primary" href="tel:14088262465">Call or Text Me</a>
             <a class="btn btn-secondary" href="mailto:dylan@dodgeagencyinc.com">Email Dylan</a>
           </div>
         </div>
 
         <div class="contact-card">
-          <span class="eyebrow">Quote Request</span>
+          <span class="eyebrow">Get a Quote</span>
           <h3>Request a quote or coverage review</h3>
 
           <form
@@ -865,6 +926,27 @@
               Something went wrong. Please try again or email dylan@dodgeagencyinc.com.
             </div>
           </form>
+
+          <div class="contact-list">
+            <div class="contact-item"><span>Phone:</span> <a href="tel:14088262465">(408) 826-2465</a></div>
+            <div class="contact-item"><span>Email:</span> <a href="mailto:dylan@dodgeagencyinc.com">dylan@dodgeagencyinc.com</a></div>
+            <div class="contact-item"><span>Serving:</span> California • Oregon • Washington</div>
+            <div class="contact-item"><span>CA Lic:</span> #4528400</div>
+          </div>
+
+          <div class="contact-brand-block">
+            <div class="contact-brand-row">
+              <img
+                src="images/farmers-logo.png"
+                alt="Farmers Insurance"
+                class="farmers-logo"
+              />
+              <div>
+                <strong style="color: var(--cream); display:block;">Farmers Insurance</strong>
+                <span style="color: var(--text-faint); font-size: 0.9rem; font-weight: 700;">Dylan Haysbert, Insurance Agent</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -874,19 +956,19 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-main">
-          <strong>Dylan Haysbert</strong> — Insurance Producer<br />
+          <strong>Dylan Haysbert</strong> — Insurance Agent<br />
           Auto • Home • Business • Life Insurance<br />
           Serving California • Oregon • Washington
         </div>
 
         <div class="footer-actions">
-          <a class="btn btn-secondary" href="#contact">Get a Quote</a>
+          <a class="btn btn-secondary" href="#quote">Get a Quote</a>
           <a class="btn btn-primary" href="tel:14088262465">Call Dylan</a>
         </div>
       </div>
 
       <div class="license-note">
-        Dylan Haysbert is a licensed insurance producer. California License #: 4528400.
+        Dylan Haysbert is a licensed insurance agent. California License #: 4528400.
         Add Oregon and Washington license numbers here before publishing if you want those listed explicitly.
       </div>
     </div>
