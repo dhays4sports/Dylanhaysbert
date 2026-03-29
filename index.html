@@ -6,7 +6,7 @@
   <title>Dylan Haysbert | Insurance Agent</title>
   <meta
     name="description"
-    content="Move fast. Stay proactive. Get a fast insurance quote or coverage review from Dylan Haysbert for auto, home, business, and life insurance."
+    content="Understand your coverage before you need it. Move fast. Stay proactive. Get a fast insurance quote or coverage review from Dylan Haysbert for auto, home, business, and life insurance."
   />
   <meta name="theme-color" content="#0f1012" />
 
@@ -97,7 +97,7 @@
     }
 
     h1 {
-      font-size: clamp(2.8rem, 7vw, 5.4rem);
+      font-size: clamp(2.8rem, 7vw, 5.1rem);
       font-weight: 900;
     }
 
@@ -220,7 +220,7 @@
 
     .hero {
       position: relative;
-      padding: 72px 0 36px;
+      padding: 78px 0 42px;
     }
 
     .hero::before {
@@ -236,63 +236,28 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 34px;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      gap: 40px;
       align-items: center;
     }
 
     .hero-copy {
-      max-width: 700px;
+      max-width: 760px;
     }
 
-    .micro-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
+    .hero-kicker {
+      display: inline-block;
       margin-bottom: 18px;
-      border-radius: 999px;
-      background: rgba(240, 231, 216, 0.06);
-      border: 1px solid rgba(240, 231, 216, 0.1);
-      color: var(--text);
+      color: var(--blue);
       font-size: 0.92rem;
-      font-weight: 700;
-    }
-
-    .brand-row {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 22px;
-      padding: 10px 14px;
-      border-radius: 18px;
-      background: rgba(240, 231, 216, 0.05);
-      border: 1px solid rgba(240, 231, 216, 0.1);
-    }
-
-    .farmers-logo {
-      height: 28px;
-      width: auto;
-      display: block;
-    }
-
-    .brand-row-copy {
-      line-height: 1.15;
-      font-size: 0.92rem;
-      font-weight: 800;
-      color: var(--cream);
-    }
-
-    .brand-row-copy span {
-      display: block;
-      margin-top: 3px;
-      font-size: 0.8rem;
-      color: var(--text-faint);
-      font-weight: 700;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
 
     .hero-title-block {
       margin-bottom: 18px;
+      max-width: 11ch;
     }
 
     .hero-title-top {
@@ -302,15 +267,31 @@
 
     .hero-title-bottom {
       display: block;
-      margin-top: 8px;
-      font-size: clamp(1.4rem, 3vw, 2rem);
+      margin-top: 10px;
+      font-size: clamp(1.35rem, 2.8vw, 1.95rem);
+    }
+
+    .hero-copy .supporting-line {
+      max-width: 44ch;
+      margin-bottom: 18px;
+      font-size: 1rem;
+      color: var(--text-faint);
+      font-weight: 700;
     }
 
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 26px;
+      margin-top: 28px;
+    }
+
+    .hero-buttons .btn-primary {
+      min-width: 250px;
+    }
+
+    .hero-buttons .btn-secondary {
+      min-width: 220px;
     }
 
     .hero-note {
@@ -320,25 +301,8 @@
       font-weight: 700;
     }
 
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .badge {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(240, 231, 216, 0.05);
-      border: 1px solid rgba(240, 231, 216, 0.1);
-      color: var(--cream);
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
     .hero-card {
-      padding: 18px;
+      padding: 22px;
       border-radius: 28px;
       background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%);
       border: 1px solid rgba(240, 231, 216, 0.1);
@@ -363,7 +327,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 14px;
-      padding: 16px 4px 4px;
+      padding: 16px 4px 2px;
     }
 
     .hero-card-footer strong {
@@ -644,6 +608,14 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .hero-copy {
+        max-width: none;
+      }
+
+      .hero-title-block {
+        max-width: 13ch;
+      }
+
       .nav {
         min-height: 88px;
       }
@@ -660,7 +632,7 @@
       }
 
       .hero {
-        padding: 50px 0 24px;
+        padding: 52px 0 26px;
       }
 
       .quick-grid {
@@ -674,6 +646,15 @@
       .hero-buttons {
         flex-direction: column;
         align-items: stretch;
+      }
+
+      .hero-buttons .btn-primary,
+      .hero-buttons .btn-secondary {
+        min-width: 0;
+      }
+
+      .hero-title-block {
+        max-width: none;
       }
 
       .nav {
@@ -765,7 +746,7 @@
       <a href="#" class="brand" aria-label="Dylan Haysbert Home">
         <img
           src="images/dylan-haysbert-logo-43.PNG"
-          alt="Dylan Haysbert Insurance Agent"
+          alt="Dylan Haysbert Insurance Producer"
           class="brand-logo"
         />
       </a>
@@ -781,46 +762,29 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="micro-pill">Visiting from my card? Start here.</div>
-
-          <div class="brand-row">
-            <img
-              src="images/farmers-logo.png"
-              alt="Farmers Insurance"
-              class="farmers-logo"
-            />
-            <div class="brand-row-copy">
-              Dylan Haysbert
-              <span>Insurance Agent</span>
-            </div>
-          </div>
+          <span class="hero-kicker">Auto • Home • Business • Life</span>
 
           <div class="hero-title-block">
             <h1>
-              <span class="hero-title-top">MOVE FAST.</span>
-              <span class="hero-title-bottom script">Stay Proactive.</span>
+              <span class="hero-title-top">Understand Your Coverage Before You Need It</span>
+              <span class="hero-title-bottom script">Move fast. Stay proactive.</span>
             </h1>
           </div>
 
           <p class="lead">
-            Fast quotes. Better coverage conversations. Real support. I help individuals,
-            families, and business owners handle insurance quickly and proactively without the usual runaround.
+            Helping individuals, families, and business owners across California, Oregon, and Washington understand their insurance, uncover coverage gaps, and avoid expensive surprises.
+          </p>
+
+          <p class="supporting-line">
+            No pressure. Just clear answers, practical options, and responsive support.
           </p>
 
           <div class="hero-buttons">
-            <a class="btn btn-primary" href="#quote">Get a Fast Quote</a>
+            <a class="btn btn-primary" href="#quote">Get a Coverage Review</a>
             <a class="btn btn-secondary" href="tel:14088262465">Call or Text Me</a>
-            <a class="btn btn-secondary" href="#coverage">View Coverage</a>
           </div>
 
           <p class="hero-note">Usually responds within 30–60 minutes.</p>
-
-          <div class="hero-badges">
-            <div class="badge">Auto</div>
-            <div class="badge">Home</div>
-            <div class="badge">Business</div>
-            <div class="badge">Life</div>
-          </div>
         </div>
 
         <div class="hero-card">
@@ -830,7 +794,7 @@
           <div class="hero-card-footer">
             <div>
               <strong>Dylan Haysbert</strong>
-              <span>Insurance Agent</span>
+              <span>Insurance Producer</span>
             </div>
             <img
               src="images/farmers-logo.png"
@@ -855,10 +819,9 @@
       <div class="container">
         <div class="section-header">
           <span class="eyebrow">Coverage</span>
-          <h2>Insurance built around real life</h2>
+          <h2>Protection built around real life</h2>
           <p>
-            Whether you need one policy or several, I’ll help you move quickly, understand your options,
-            and make sure your coverage actually fits your life, your property, and your risk.
+            Whether you need one policy or several, I’ll help you move quickly, understand your options, and make sure your coverage actually fits your life, your property, and your risk.
           </p>
         </div>
 
@@ -908,8 +871,7 @@
           <span class="eyebrow">Why Work With Me</span>
           <h2>Fast, clear, proactive help</h2>
           <p>
-            My job is not just to throw you a quote. It’s to help you move quickly, understand what you’re buying,
-            and make sure nothing important gets missed.
+            My job is not just to throw you a quote. It’s to help you understand what you’re buying, move quickly when needed, and make sure nothing important gets missed.
           </p>
 
           <div class="quote-list">
@@ -1005,7 +967,7 @@
               />
               <div>
                 <strong style="color: var(--cream); display:block;">Farmers Insurance</strong>
-                <span style="color: var(--text-faint); font-size: 0.9rem; font-weight: 700;">Dylan Haysbert, Insurance Agent</span>
+                <span style="color: var(--text-faint); font-size: 0.9rem; font-weight: 700;">Dylan Haysbert, Insurance Producer</span>
               </div>
             </div>
           </div>
@@ -1018,7 +980,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-main">
-          <strong>Dylan Haysbert</strong> — Insurance Agent<br />
+          <strong>Dylan Haysbert</strong> — Insurance Producer<br />
           Auto • Home • Business • Life Insurance<br />
           Serving California • Oregon • Washington
         </div>
@@ -1030,7 +992,7 @@
       </div>
 
       <div class="license-note">
-        Dylan Haysbert is a licensed insurance agent. California License #: 4528400.
+        Dylan Haysbert is a licensed insurance producer. California License #: 4528400.
         Add Oregon and Washington license numbers here before publishing if you want those listed explicitly.
       </div>
     </div>
@@ -1075,4 +1037,4 @@
     });
   </script>
 </body>
-</html>```
+</html>
