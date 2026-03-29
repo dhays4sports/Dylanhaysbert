@@ -136,34 +136,47 @@
       top: 0;
       z-index: 100;
       border-bottom: 1px solid rgba(240, 231, 216, 0.08);
-      background: rgba(15, 16, 18, 0.82);
-      backdrop-filter: blur(14px);
+      background: rgba(15, 16, 18, 0.88);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
     }
 
     .nav {
-      min-height: 80px;
+      min-height: 94px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 20px;
+      padding: 10px 0;
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
       min-width: 0;
+      flex: 0 1 auto;
     }
 
     .brand-logo {
-      height: 62px;
+      height: 88px;
       width: auto;
       display: block;
+      filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.22));
+      transform: translateY(1px);
     }
 
     .header-actions {
       display: flex;
       align-items: center;
+      justify-content: flex-end;
       gap: 12px;
+      flex: 0 0 auto;
+    }
+
+    .header-actions .btn {
+      min-height: 50px;
+      padding: 0 20px;
+      font-size: 0.98rem;
     }
 
     .btn {
@@ -630,6 +643,14 @@
       .coverage-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .nav {
+        min-height: 88px;
+      }
+
+      .brand-logo {
+        height: 80px;
+      }
     }
 
     @media (max-width: 760px) {
@@ -655,12 +676,28 @@
         align-items: stretch;
       }
 
+      .nav {
+        min-height: auto;
+        padding: 12px 0;
+        align-items: center;
+      }
+
       .brand-logo {
-        height: 54px;
+        height: 72px;
+      }
+
+      .header-actions {
+        gap: 10px;
       }
 
       .header-actions .btn-secondary {
         display: none;
+      }
+
+      .header-actions .btn-primary {
+        min-height: 48px;
+        padding: 0 18px;
+        font-size: 0.95rem;
       }
 
       .quote-panel,
@@ -676,7 +713,26 @@
       }
 
       .nav {
-        min-height: 72px;
+        min-height: auto;
+        padding: 12px 0 14px;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .brand {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      .brand-logo {
+        height: 68px;
+        max-width: 180px;
+        object-fit: contain;
+      }
+
+      .header-actions {
+        flex: 0 0 auto;
+        align-self: center;
       }
 
       .quick-grid {
@@ -688,7 +744,13 @@
       }
 
       .header-actions .btn {
+        width: auto;
+        min-height: 46px;
         padding: 0 16px;
+      }
+
+      .header-actions .btn-primary {
+        font-size: 0.92rem;
       }
 
       .farmers-logo {
@@ -1013,4 +1075,4 @@
     });
   </script>
 </body>
-</html>
+</html>```
