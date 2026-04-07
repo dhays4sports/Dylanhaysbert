@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fast Home Insurance Quote | Dylan Haysbert</title>
+  <meta
+    name="description"
+    content="Get a same-day home insurance quote from Dylan Haysbert. Fast, accurate coverage support to help keep your purchase file moving."
+  />
+  <meta name="theme-color" content="#0f1012" />
+
+  <style>
+    :root {
+      --bg: #0f1012;
+      --bg-soft: #16181c;
+      --panel: #121418;
+      --panel-2: #181b20;
+      --text: #f0e7d8;
+      --text-soft: #c7beb1;
+      --text-faint: #9c9489;
+      --line: rgba(240, 231, 216, 0.12);
+      --cream: #f0e7d8;
+      --blue: #8ba9d9;
+      --farmers-red: #e1251b;
+      --farmers-blue: #004990;
+      --success: #8fd0a1;
+      --danger: #f19b9b;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(139, 169, 217, 0.08), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(225, 37, 27, 0.06), transparent 20%),
+        linear-gradient(180deg, #0f1012 0%, #111317 100%);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(100% - 28px, var(--max));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--blue);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      color: var(--cream);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6.5vw, 5rem);
+      font-weight: 900;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 800;
+    }
+
+    h3 {
+      font-size: 1.14rem;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--text-soft);
+      font-size: 1.03rem;
+    }
+
+    .script {
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--blue);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(240, 231, 216, 0.08);
+      background: rgba(15, 16, 18, 0.9);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    .nav {
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 8px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      min-width: 0;
+      flex: 0 1 auto;
+    }
+
+    .brand-logo {
+      height: 88px;
+      width: auto;
+      display: block;
+      filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.22));
+      transform: translateY(1px);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 0 0 auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--cream);
+      color: #111317;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.03);
+    }
+
+    .btn-secondary {
+      color: var(--cream);
+      background: transparent;
+      border-color: rgba(240, 231, 216, 0.18);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(139, 169, 217, 0.6);
+      color: var(--blue);
+    }
+
+    .hero {
+      position: relative;
+      padding: 74px 0 40px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--farmers-red), var(--farmers-blue), var(--blue));
+      opacity: 0.95;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(360px, 0.88fr);
+      gap: 34px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+    }
+
+    .hero-title {
+      max-width: 10.5ch;
+    }
+
+    .hero-subline {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: clamp(1.3rem, 2vw, 1.9rem);
+    }
+
+    .lead {
+      max-width: 52ch;
+      font-size: 1.1rem;
+    }
+
+    .trust-line {
+      color: var(--text-faint);
+      font-weight: 700;
+      font-size: 0.98rem;
+      max-width: 54ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .hero-actions .btn-primary {
+      min-width: 270px;
+    }
+
+    .hero-actions .btn-secondary {
+      min-width: 220px;
+    }
+
+    .micro-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .proof-pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(240, 231, 216, 0.05);
+      border: 1px solid rgba(240, 231, 216, 0.1);
+      color: var(--cream);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .hero-card {
+      padding: 22px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(240, 231, 216, 0.1);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card-inner {
+      display: grid;
+      gap: 16px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-badge {
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(240, 231, 216, 0.05);
+      border: 1px solid rgba(240, 231, 216, 0.1);
+      color: var(--cream);
+      font-weight: 700;
+      font-size: 0.93rem;
+    }
+
+    .farmers-badge {
+      background: var(--cream);
+      padding: 10px 14px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      border: 1px solid rgba(240, 231, 216, 0.15);
+      width: fit-content;
+    }
+
+    .farmers-logo {
+      height: 40px;
+      width: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .card-copy {
+      padding-top: 2px;
+    }
+
+    .card-copy strong {
+      display: block;
+      color: var(--cream);
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .card-copy span {
+      display: block;
+      color: var(--text-faint);
+      font-size: 0.93rem;
+      font-weight: 700;
+    }
+
+    .info-band {
+      padding: 20px 0;
+      border-top: 1px solid rgba(240, 231, 216, 0.08);
+      border-bottom: 1px solid rgba(240, 231, 216, 0.08);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .info-item {
+      text-align: center;
+      color: var(--cream);
+      font-weight: 700;
+      font-size: 0.96rem;
+    }
+
+    .proof-section {
+      padding: 88px 0 28px;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .proof-card {
+      padding: 24px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(240, 231, 216, 0.1);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+      height: 100%;
+    }
+
+    .proof-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      margin-bottom: 14px;
+      background: rgba(139, 169, 217, 0.08);
+      border: 1px solid rgba(139, 169, 217, 0.18);
+      color: var(--cream);
+      font-size: 1.45rem;
+    }
+
+    .proof-callout {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(139, 169, 217, 0.07);
+      border: 1px solid rgba(139, 169, 217, 0.14);
+      color: var(--cream);
+      font-weight: 700;
+    }
+
+    .quote-section {
+      padding: 60px 0 88px;
+    }
+
+    .quote-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel,
+    .contact-card {
+      padding: 30px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(240, 231, 216, 0.1);
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+
+    .benefit-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .benefit-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--text-soft);
+      font-weight: 600;
+    }
+
+    .benefit-item::before {
+      content: "•";
+      color: var(--blue);
+      font-size: 1.1rem;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      color: var(--cream);
+      font-size: 0.94rem;
+      font-weight: 800;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(240, 231, 216, 0.12);
+      background: rgba(255,255,255,0.03);
+      color: var(--cream);
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(240, 231, 216, 0.45);
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: rgba(139, 169, 217, 0.6);
+      box-shadow: 0 0 0 4px rgba(139, 169, 217, 0.12);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .button-stack {
+      display: grid;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .button-stack .btn {
+      width: 100%;
+    }
+
+    .form-note {
+      font-size: 0.92rem;
+      color: var(--text-faint);
+      margin-top: 2px;
+    }
+
+    .contact-meta {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      color: var(--cream);
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .contact-item span {
+      color: var(--text-faint);
+      font-weight: 600;
+      display: inline-block;
+      min-width: 86px;
+    }
+
+    .contact-brand-block {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(240, 231, 216, 0.04);
+      border: 1px solid rgba(240, 231, 216, 0.09);
+    }
+
+    .contact-brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .form-success,
+    .form-error {
+      display: none;
+      padding: 14px 16px;
+      border-radius: 14px;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .form-success {
+      background: rgba(143, 208, 161, 0.08);
+      color: var(--success);
+      border: 1px solid rgba(143, 208, 161, 0.18);
+    }
+
+    .form-error {
+      background: rgba(241, 155, 155, 0.08);
+      color: var(--danger);
+      border: 1px solid rgba(241, 155, 155, 0.18);
+    }
+
+    .site-footer {
+      padding: 32px 0 36px;
+      border-top: 1px solid rgba(240, 231, 216, 0.08);
+      background: rgba(0,0,0,0.12);
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-main {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .footer-main strong {
+      color: var(--cream);
+    }
+
+    .footer-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .license-note {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(240, 231, 216, 0.08);
+      color: var(--text-faint);
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(340px, 0.86fr);
+        gap: 28px;
+      }
+
+      .proof-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .quote-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav {
+        min-height: auto;
+        padding: 12px 0;
+        gap: 14px;
+      }
+
+      .brand-logo {
+        height: 72px;
+      }
+
+      .header-actions .btn {
+        min-height: 48px;
+        padding: 0 18px;
+        font-size: 0.95rem;
+      }
+
+      .hero {
+        padding: 50px 0 24px;
+      }
+
+      .hero-grid,
+      .info-grid,
+      .proof-grid,
+      .quote-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title,
+      .hero-title-top {
+        max-width: none;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn-primary,
+      .hero-actions .btn-secondary {
+        min-width: 0;
+      }
+
+      .panel,
+      .contact-card,
+      .proof-card,
+      .hero-card {
+        padding: 24px;
+      }
+
+      .contact-brand-row {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 22px, var(--max));
+      }
+
+      .nav {
+        align-items: flex-start;
+      }
+
+      .brand {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      .brand-logo {
+        height: 68px;
+        max-width: 180px;
+        object-fit: contain;
+      }
+
+      .header-actions {
+        flex: 0 0 auto;
+        align-self: center;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .header-actions .btn {
+        width: auto;
+        min-height: 46px;
+        padding: 0 16px;
+        font-size: 0.92rem;
+      }
+
+      .farmers-badge {
+        padding: 8px 10px;
+        border-radius: 14px;
+      }
+
+      .farmers-logo {
+        height: 34px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="/" class="brand" aria-label="Dylan Haysbert Home">
+        <img
+          src="images/dylan-haysbert-logo-43.PNG"
+          alt="Dylan Haysbert Insurance Producer"
+          class="brand-logo"
+        />
+      </a>
+
+      <div class="header-actions">
+        <a class="btn btn-primary" href="sms:14088262465?body=Hi Dylan, I need a home insurance quote.">Text Dylan Now</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Fast quote page</span>
+
+          <div class="hero-title">
+            <h1>
+              <span class="hero-title-top">Get a Same-Day Home Insurance Quote</span>
+              <span class="hero-subline script">Move fast. Stay proactive.</span>
+            </h1>
+          </div>
+
+          <p class="lead">
+            Fast, accurate coverage support so your deal stays on track.
+          </p>
+
+          <p class="trust-line">
+            Used by lenders to keep closings moving — no delays, no surprises.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="sms:14088262465?body=Hi Dylan, I need a home insurance quote.">Text Dylan Now (Fastest Option)</a>
+            <a class="btn btn-secondary" href="#quote-form">Get My Quote</a>
+          </div>
+
+          <div class="micro-proof" aria-label="Quick Proof">
+            <div class="proof-pill">Same-day quotes</div>
+            <div class="proof-pill">Direct escrow communication</div>
+            <div class="proof-pill">Accurate rebuild cost</div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-inner">
+            <div class="badge-row">
+              <div class="hero-badge">Working with a lender? I’ll coordinate directly so nothing slows your file down.</div>
+            </div>
+
+            <div class="farmers-badge">
+              <img
+                src="images/farmers-logo2.png?v=1"
+                alt="Farmers Insurance"
+                class="farmers-logo"
+              />
+            </div>
+
+            <div class="card-copy">
+              <strong>Dylan Haysbert</strong>
+              <span>Insurance Producer</span>
+              <span>CA License #4528400</span>
+            </div>
+
+            <div class="button-stack">
+              <a class="btn btn-primary" href="tel:14088262465">Call (408) 826-2465</a>
+              <a class="btn btn-secondary" href="mailto:dylan@dodgeagencyinc.com">Email Dylan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-band" aria-label="Highlights">
+      <div class="container info-grid">
+        <div class="info-item">Same-Day Quotes</div>
+        <div class="info-item">Fast Escrow Support</div>
+        <div class="info-item">Accurate Rebuild Cost</div>
+        <div class="info-item">Reliable Coverage</div>
+      </div>
+    </section>
+
+    <section class="proof-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Why people use this page</span>
+          <h2>Fast help for purchase files</h2>
+          <p>
+            This page is built to get you from scan to quote without extra steps, confusion, or unnecessary delays.
+          </p>
+        </div>
+
+        <div class="proof-grid">
+          <article class="proof-card">
+            <div class="proof-icon">⚡</div>
+            <h3>Same-day quotes</h3>
+            <p>Fast turnaround so your file does not stall waiting on insurance.</p>
+          </article>
+
+          <article class="proof-card">
+            <div class="proof-icon">💬</div>
+            <h3>Direct communication</h3>
+            <p>I stay in touch clearly and quickly throughout the process.</p>
+          </article>
+
+          <article class="proof-card">
+            <div class="proof-icon">🏠</div>
+            <h3>Accurate rebuild cost</h3>
+            <p>Reliable numbers to help avoid last-minute issues or weak coverage.</p>
+          </article>
+
+          <article class="proof-card">
+            <div class="proof-icon">🛡️</div>
+            <h3>Reliable coverage</h3>
+            <p>Clear options designed to help protect the property and keep things moving.</p>
+          </article>
+        </div>
+
+        <div class="proof-callout">
+          No pressure. Just clear answers, fast turnaround, and reliable coverage so nothing holds up your closing.
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section" id="quote-form">
+      <div class="container quote-wrap">
+        <div class="panel">
+          <span class="eyebrow">Fastest option</span>
+          <h2>Text me and I’ll take it from there</h2>
+          <p>
+            If speed matters most, send me a quick text and I’ll help get the process moving right away.
+          </p>
+
+          <div class="benefit-list">
+            <div class="benefit-item">Best for purchase files, lender timelines, and urgent requests</div>
+            <div class="benefit-item">Easy for borrowers who do not want to fill out a form first</div>
+            <div class="benefit-item">Fastest path to a same-day response</div>
+          </div>
+
+          <div class="button-stack" style="margin-top: 24px;">
+            <a class="btn btn-primary" href="sms:14088262465?body=Hi Dylan, I need a home insurance quote.">Text Dylan Now</a>
+            <a class="btn btn-secondary" href="tel:14088262465">Call (408) 826-2465</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <span class="eyebrow">Quick form</span>
+          <h3>Get a quote request started</h3>
+
+          <form
+            id="leadForm"
+            action="https://formspree.io/f/xeerzpwq"
+            method="POST"
+          >
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="Your phone number" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="Your email" />
+            </div>
+
+            <div class="field">
+              <label for="propertyAddress">Property Address</label>
+              <input id="propertyAddress" name="property_address" type="text" placeholder="Property address" />
+            </div>
+
+            <div class="field">
+              <label for="loanType">What best describes this?</label>
+              <select id="loanType" name="loan_type">
+                <option value="">Select one</option>
+                <option>Home Purchase</option>
+                <option>Refinance</option>
+                <option>Just Shopping</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">Anything else I should know?</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Optional details"
+              ></textarea>
+            </div>
+
+            <input type="hidden" name="_subject" value="New Fast Quote Request from dylanhaysbert.com/fast-quote" />
+            <input type="hidden" name="_captcha" value="false" />
+
+            <button class="btn btn-primary" type="submit">Get My Quote</button>
+
+            <div class="form-note">
+              Most responses go out within 30–60 minutes.
+            </div>
+
+            <div class="form-success" id="formSuccess">
+              Thanks — your request was sent successfully.
+            </div>
+
+            <div class="form-error" id="formError">
+              Something went wrong. Please try again or text Dylan directly.
+            </div>
+          </form>
+
+          <div class="contact-meta">
+            <div class="contact-item"><span>Phone:</span> <a href="tel:14088262465">(408) 826-2465</a></div>
+            <div class="contact-item"><span>Email:</span> <a href="mailto:dylan@dodgeagencyinc.com">dylan@dodgeagencyinc.com</a></div>
+            <div class="contact-item"><span>Serving:</span> California • Oregon • Washington</div>
+            <div class="contact-item"><span>CA Lic:</span> #4528400</div>
+          </div>
+
+          <div class="contact-brand-block">
+            <div class="contact-brand-row">
+              <div class="farmers-badge">
+                <img
+                  src="images/farmers-logo2.png?v=1"
+                  alt="Farmers Insurance"
+                  class="farmers-logo"
+                />
+              </div>
+              <div>
+                <strong style="color: var(--cream); display:block;">Farmers Insurance</strong>
+                <span style="color: var(--text-faint); font-size: 0.9rem; font-weight: 700;">Dylan Haysbert, Insurance Producer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-main">
+          <strong>Dylan Haysbert</strong> — Insurance Producer<br />
+          Fast home insurance quotes for purchase files and fast-moving coverage needs.
+        </div>
+
+        <div class="footer-actions">
+          <a class="btn btn-secondary" href="mailto:dylan@dodgeagencyinc.com">Email Dylan</a>
+          <a class="btn btn-primary" href="sms:14088262465?body=Hi Dylan, I need a home insurance quote.">Text Dylan</a>
+        </div>
+      </div>
+
+      <div class="license-note">
+        Dylan Haysbert is a licensed insurance producer. California License #: 4528400.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById("leadForm");
+    const successBox = document.getElementById("formSuccess");
+    const errorBox = document.getElementById("formError");
+
+    form?.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      successBox.style.display = "none";
+      errorBox.style.display = "none";
+
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalText = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        if (response.ok) {
+          form.reset();
+          successBox.style.display = "block";
+        } else {
+          errorBox.style.display = "block";
+        }
+      } catch (error) {
+        errorBox.style.display = "block";
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+      }
+    });
+  </script>
+</body>
+</html>
