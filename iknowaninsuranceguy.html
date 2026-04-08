@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>I Know An Insurance Guy | Dylan Haysbert | Farmers Insurance</title>
   <meta
+    id="meta-description"
     name="description"
     content="A fast, easy way to get connected with Dylan Haysbert at Farmers Insurance for an insurance quote. Sent by a friend, lender, or realtor? You're in the right place."
   />
@@ -643,7 +644,7 @@
           </div>
 
           <div class="brand-wordmark">
-            <img src="/images/logo-wordmark.PNG" alt="I Know An Insurance Guy" />
+            <img src="/images/logo-wordmark.png" alt="I Know An Insurance Guy" />
             <p class="brand-sub">Dylan Haysbert | Farmers Insurance</p>
           </div>
         </div>
@@ -661,7 +662,7 @@
         <div class="hero-shell">
           <div class="hero-grid">
             <div class="hero-copy">
-              <div class="eyebrow">
+              <div class="eyebrow" data-referral-eyebrow>
                 <span class="eyebrow-dot"></span>
                 Sent by a friend, lender, or realtor? You’re in the right place.
               </div>
@@ -672,7 +673,7 @@
                 A fast, easy way to get connected with Dylan for an insurance quote through Farmers Insurance.
               </p>
 
-              <p class="hero-note">
+              <p class="hero-note" data-referral-note>
                 Clear answers. Quick follow-up. No call-center runaround. <strong>Most people landing here were referred</strong>, so this page is built to make the handoff simple.
               </p>
 
@@ -687,7 +688,7 @@
               />
 
               <div class="form-top">
-                <span class="form-kicker">You’re reaching Dylan directly</span>
+                <span class="form-kicker" data-referral-kicker>You’re reaching Dylan directly</span>
                 <h2 class="form-title">Start My Quote</h2>
                 <p class="form-sub">
                   Short form. No pressure. Just enough to get the conversation moving.
@@ -783,6 +784,9 @@
                   ></textarea>
                 </div>
 
+                <input type="hidden" id="referrer_name" name="referrer_name" value="">
+                <input type="hidden" id="referral_slug" name="referral_slug" value="">
+                <input type="hidden" id="landing_path" name="landing_path" value="">
                 <input type="hidden" name="_subject" value="New lead from iknowaninsuranceguy.com">
                 <input type="hidden" name="_next" value="https://iknowaninsuranceguy.com/thanks.html">
 
@@ -889,5 +893,86 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      const path = window.location.pathname.replace(/^\/+|\/+$/g, "");
+      const reserved = new Set([
+        "",
+        "index.html",
+        "thanks",
+        "thanks.html",
+        "privacy",
+        "privacy.html",
+        "terms",
+        "terms.html",
+        "favicon.ico"
+      ]);
+
+      const referralNameMap = {
+        "kelly": "Kelly",
+        "jessica-loans": "Jessica Loans",
+        "mike-realtor": "Mike Realtor"
+      };
+
+      function formatReferralName(slug) {
+        if (referralNameMap[slug]) return referralNameMap[slug];
+
+        return slug
+          .split("-")
+          .filter(Boolean)
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ");
+      }
+
+      if (reserved.has(path)) {
+        document.getElementById("landing_path").value = window.location.pathname;
+        return;
+      }
+
+      const referrerName = formatReferralName(path);
+
+      const eyebrow = document.querySelector("[data-referral-eyebrow]");
+      const note = document.querySelector("[data-referral-note]");
+      const kicker = document.querySelector("[data-referral-kicker]");
+      const referrerNameInput = document.getElementById("referrer_name");
+      const referralSlugInput = document.getElementById("referral_slug");
+      const landingPathInput = document.getElementById("landing_path");
+      const metaDescription = document.getElementById("meta-description");
+
+      if (eyebrow) {
+        eyebrow.innerHTML = '<span class="eyebrow-dot"></span>Sent by ' + referrerName + '? You’re in the right place.';
+      }
+
+      if (note) {
+        note.innerHTML = 'If <strong>' + referrerName + '</strong> sent you here, you’re in the right place. Clear answers. Quick follow-up. No call-center runaround.';
+      }
+
+      if (kicker) {
+        kicker.textContent = referrerName + ' sent you over';
+      }
+
+      if (referrerNameInput) {
+        referrerNameInput.value = referrerName;
+      }
+
+      if (referralSlugInput) {
+        referralSlugInput.value = path;
+      }
+
+      if (landingPathInput) {
+        landingPathInput.value = window.location.pathname;
+      }
+
+      document.title = 'I Know An Insurance Guy | ' + referrerName + ' Referral | Dylan Haysbert | Farmers Insurance';
+
+      if (metaDescription) {
+        metaDescription.setAttribute(
+          "content",
+          referrerName + " sent you to Dylan Haysbert at Farmers Insurance for a fast, easy insurance quote."
+        );
+      }
+    })();
+  </script>
 </body>
 </html>
