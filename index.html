@@ -4,7 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Dylan Haysbert | Fast Insurance Quotes</title>
+<title>Dylan Haysbert | Insurance Producer</title>
+<meta
+  name="description"
+  content="Fast insurance quotes and coverage reviews from Dylan Haysbert. Auto, home, business, and life insurance support across California, Oregon, and Washington."
+/>
+<meta name="theme-color" content="#003a8f" />
 
 <style>
 :root {
@@ -17,252 +22,994 @@
   --bg: #f3f6fb;
   --surface: #ffffff;
   --border: #d8e0ec;
-  --radius: 20px;
+  --soft-blue: #eaf1ff;
+  --soft-red: #fff5f5;
+  --radius: 22px;
   --shadow: 0 18px 45px rgba(0, 58, 143, 0.14);
+  --max: 1120px;
 }
 
 * { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
-  font-family: Inter, system-ui, sans-serif;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(0, 58, 143, 0.12), transparent 40rem),
+    radial-gradient(circle at top left, rgba(0, 58, 143, 0.14), transparent 36rem),
     linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
   color: var(--text);
+  padding-bottom: 86px;
 }
 
-/* NAV */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: min(100% - 28px, var(--max));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
 .nav {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:16px;
-  max-width:1100px;
-  margin:auto;
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
-.logo {
-  font-weight:900;
-  color:var(--blue);
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 950;
+  color: var(--blue-dark);
+  letter-spacing: -0.03em;
 }
 
-.cta {
-  background:var(--red);
-  color:white;
-  padding:10px 16px;
-  border-radius:999px;
-  font-weight:800;
-  text-decoration:none;
+.brand img {
+  height: 62px;
+  width: auto;
 }
 
-/* HERO */
-.hero {
-  max-width:1100px;
-  margin:auto;
-  padding:40px 16px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:center;
-}
-
-.hero h1 {
-  font-size:clamp(32px,5vw,56px);
-  margin-bottom:10px;
-}
-
-.hero h1 span {
-  color:var(--red);
-}
-
-.hero p {
-  color:var(--muted);
-  margin-bottom:20px;
-}
-
-.hero-buttons {
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 22px;
+  border-radius: 999px;
+  font-weight: 900;
+  border: 0;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn-primary {
-  background:var(--red);
-  color:white;
-  padding:14px 18px;
-  border-radius:14px;
-  font-weight:900;
-  text-decoration:none;
+  color: white;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  box-shadow: 0 14px 28px rgba(227, 24, 55, 0.22);
 }
 
 .btn-secondary {
-  border:1px solid var(--border);
-  padding:14px 18px;
-  border-radius:14px;
-  font-weight:800;
-  text-decoration:none;
+  color: var(--blue-dark);
+  background: white;
+  border: 1px solid var(--border);
 }
 
-/* CARD */
-.card {
-  background:white;
-  padding:20px;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
+.hero {
+  padding: 42px 0 28px;
 }
 
-.trust {
-  display:flex;
-  gap:10px;
-  margin-top:16px;
-  flex-wrap:wrap;
+.hero-card {
+  overflow: hidden;
+  border-radius: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
 }
 
-.trust span {
-  background:#eef4ff;
-  padding:8px 12px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:700;
+.hero-top {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 28px;
+  align-items: center;
+  background: linear-gradient(140deg, var(--blue), var(--blue-dark));
+  color: white;
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* SECTION */
+.hero-top::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border: 36px solid rgba(255,255,255,0.08);
+  border-radius: 50%;
+  right: -90px;
+  top: -80px;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.shield {
+  width: 13px;
+  height: 13px;
+  background: var(--red);
+  clip-path: polygon(50% 0%, 92% 17%, 84% 76%, 50% 100%, 16% 76%, 8% 17%);
+}
+
+h1 {
+  margin: 26px 0 12px;
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+
+h1 span {
+  color: var(--red);
+}
+
+.lead {
+  max-width: 54ch;
+  margin: 0;
+  color: rgba(255,255,255,0.88);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.hero-actions .btn-secondary {
+  background: rgba(255,255,255,0.12);
+  color: white;
+  border-color: rgba(255,255,255,0.18);
+}
+
+.hero-photo-wrap {
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 24px;
+  padding: 14px;
+}
+
+.hero-photo {
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 4 / 4.5;
+  background: #dbe6f6;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--border);
+}
+
+.stat {
+  padding: 18px 16px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+
+.stat:last-child { border-right: 0; }
+
+.stat strong {
+  display: block;
+  color: var(--blue-dark);
+  font-size: 15px;
+}
+
+.stat span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .section {
-  max-width:1100px;
-  margin:auto;
-  padding:60px 16px;
+  padding: 54px 0;
 }
 
-.grid {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
+.section-header {
+  max-width: 760px;
+  margin-bottom: 22px;
 }
 
-.item {
-  background:white;
-  padding:18px;
-  border-radius:var(--radius);
-  border:1px solid var(--border);
+.eyebrow {
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-/* FORM */
+h2 {
+  margin: 8px 0 10px;
+  color: var(--blue-dark);
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.section-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.coverage-grid,
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: 0 12px 28px rgba(0, 58, 143, 0.08);
+}
+
+.card-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  background: var(--soft-blue);
+  color: var(--blue-dark);
+  font-size: 24px;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  color: var(--blue-dark);
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.path-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.path-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.path-card.featured {
+  background: linear-gradient(140deg, var(--blue), var(--blue-dark));
+  color: white;
+}
+
+.path-card.featured h3,
+.path-card.featured p {
+  color: white;
+}
+
+.path-card.featured p {
+  opacity: 0.88;
+}
+
+.path-link {
+  display: inline-flex;
+  margin-top: 16px;
+  color: var(--red);
+  font-weight: 950;
+  font-size: 14px;
+}
+
+.path-card.featured .path-link {
+  color: white;
+}
+
+.quote-block {
+  padding: 54px 0 70px;
+}
+
+.quote-wrap {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.quote-panel {
+  background: linear-gradient(140deg, var(--blue), var(--blue-dark));
+  color: white;
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.quote-panel::after {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  border: 30px solid rgba(255,255,255,0.08);
+  border-radius: 50%;
+  right: -76px;
+  bottom: -70px;
+}
+
+.quote-panel h2 {
+  color: white;
+}
+
+.quote-panel p {
+  color: rgba(255,255,255,0.88);
+}
+
+.quote-list {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.quote-item {
+  padding: 12px 14px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .form-card {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: var(--shadow);
 }
 
-input, select, textarea {
-  width:100%;
-  padding:12px;
-  border-radius:10px;
-  border:1px solid var(--border);
+form {
+  display: grid;
+  gap: 13px;
+  margin-top: 14px;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 850;
+  color: #253247;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: #fbfdff;
+  border-radius: 13px;
+  padding: 14px 13px;
+  font: inherit;
+  color: var(--text);
+  outline: none;
+}
+
+textarea {
+  min-height: 105px;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px rgba(0, 58, 143, 0.12);
+  background: white;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
 }
 
 button {
-  background:var(--red);
-  color:white;
-  padding:14px;
-  border-radius:14px;
-  border:0;
-  font-weight:900;
+  border: 0;
 }
 
-.footer {
-  text-align:center;
-  padding:30px;
-  color:var(--muted);
+.form-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.35;
 }
 
-/* MOBILE */
-@media(max-width:900px){
-  .hero { grid-template-columns:1fr; }
-  .grid { grid-template-columns:1fr 1fr; }
-  .form-card { grid-template-columns:1fr; }
+.form-success,
+.form-error {
+  display: none;
+  padding: 13px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.form-success {
+  background: rgba(34, 197, 94, 0.08);
+  color: #15803d;
+  border: 1px solid rgba(34, 197, 94, 0.18);
+}
+
+.form-error {
+  background: rgba(227, 24, 55, 0.08);
+  color: var(--red);
+  border: 1px solid rgba(227, 24, 55, 0.18);
+}
+
+.contact-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.contact-item {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.contact-item span {
+  color: var(--muted);
+  display: inline-block;
+  min-width: 76px;
+}
+
+.site-footer {
+  background: #fbfdff;
+  border-top: 1px solid var(--border);
+  padding: 26px 0;
+}
+
+.footer-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.footer-main {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.footer-main strong {
+  color: var(--text);
+}
+
+.footer-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.license-note {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+.sticky-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  background: linear-gradient(140deg, var(--blue), var(--blue-dark));
+  border-top: 4px solid var(--red);
+  box-shadow: 0 -12px 30px rgba(0, 58, 143, 0.22);
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+}
+
+.sticky-inner {
+  max-width: 620px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.sticky-copy {
+  color: white;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.sticky-copy strong {
+  display: block;
+  font-size: 13px;
+}
+
+.sticky-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.sticky-actions a {
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.call-btn {
+  background: white;
+  color: var(--blue-dark);
+}
+
+.form-btn {
+  background: var(--red);
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .hero-top,
+  .quote-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .coverage-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .path-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo-wrap {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav {
+    min-height: 76px;
+  }
+
+  .brand img {
+    height: 54px;
+  }
+
+  .nav .btn {
+    min-height: 44px;
+    padding: 0 14px;
+    font-size: 13px;
+  }
+
+  .hero {
+    padding-top: 20px;
+  }
+
+  .hero-top {
+    padding: 26px 20px;
+  }
+
+  .hero-bottom {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .coverage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-actions,
+  .footer-actions .btn {
+    width: 100%;
+  }
+
+  .sticky-inner {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .sticky-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sticky-actions a {
+    text-align: center;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="nav">
-  <div class="logo">Dylan Haysbert</div>
-  <a href="tel:14088262465" class="cta">Call Now</a>
-</div>
+<header class="site-header">
+  <div class="container nav">
+    <a href="#" class="brand" aria-label="Dylan Haysbert Home">
+      <img src="images/dylan-haysbert-logo-43.PNG" alt="Dylan Haysbert Insurance Producer" />
+    </a>
 
-<div class="hero">
+    <a class="btn btn-primary" href="tel:14088262465">Call Dylan</a>
+  </div>
+</header>
 
-  <div>
-    <h1>KEEP YOUR COVERAGE <span>TIGHT</span></h1>
-    <p>
-      Fast quotes. Clear answers. No surprises when something happens.
-    </p>
+<main>
 
-    <div class="hero-buttons">
-      <a href="#quote" class="btn-primary">Get a Quote</a>
-      <a href="/realtor" class="btn-secondary">For Realtors →</a>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-card">
+
+        <div class="hero-top">
+          <div class="hero-copy">
+            <div class="badge"><span class="shield"></span> Farmers Insurance</div>
+
+            <h1>Insurance Help That <span>Moves Fast</span></h1>
+
+            <p class="lead">
+              Clear quotes, practical coverage reviews, and responsive support for auto, home, business, and life insurance.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#quote">Get a Coverage Review</a>
+              <a class="btn btn-secondary" href="tel:14088262465">Call or Text Me</a>
+            </div>
+          </div>
+
+          <div class="hero-photo-wrap">
+            <div class="hero-photo">
+              <img src="images/dylan-haysbert2.png" alt="Dylan Haysbert headshot" />
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-bottom">
+          <div class="stat">
+            <strong>Auto</strong>
+            <span>Vehicles & liability</span>
+          </div>
+          <div class="stat">
+            <strong>Home</strong>
+            <span>Property protection</span>
+          </div>
+          <div class="stat">
+            <strong>Business</strong>
+            <span>Commercial coverage</span>
+          </div>
+          <div class="stat">
+            <strong>Life</strong>
+            <span>Family protection</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="coverage">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Coverage</span>
+        <h2>Protection built around real life</h2>
+        <p>
+          Whether you need one policy or several, I’ll help you move quickly, understand your options, and make sure your coverage fits your life, property, business, and risk.
+        </p>
+      </div>
+
+      <div class="coverage-grid">
+        <article class="card">
+          <div class="card-icon">🚗</div>
+          <h3>Auto Insurance</h3>
+          <p>Coverage for your vehicles, liability exposure, and the people who ride with you.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🏠</div>
+          <h3>Home Insurance</h3>
+          <p>Coverage for your home, belongings, and liability with attention to real rebuild needs.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🏢</div>
+          <h3>Business Insurance</h3>
+          <p>Protection designed around how your business operates, from property to liability.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">❤️</div>
+          <h3>Life Insurance</h3>
+          <p>Protection for the people who depend on you, built around your long-term goals.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="paths">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Fast Paths</span>
+        <h2>Need something specific?</h2>
+        <p>
+          Start with the path that matches your situation. If you’re not sure, use the general quote form below.
+        </p>
+      </div>
+
+      <div class="path-grid">
+        <article class="card path-card featured">
+          <h3>Buying a home?</h3>
+          <p>Fast quote intake for realtors, lenders, and active escrow timelines.</p>
+          <a class="path-link" href="/realtor">Fast Quote for Active Deals →</a>
+        </article>
+
+        <article class="card path-card">
+          <h3>Rush escrow issue?</h3>
+          <p>Use the priority intake path when the insurance side needs to move immediately.</p>
+          <a class="path-link" href="/realtor-rush">Rush Deal? Prioritize It →</a>
+        </article>
+
+        <article class="card path-card">
+          <h3>Already insured?</h3>
+          <p>Request a second opinion on your current coverage before you need to use it.</p>
+          <a class="path-link" href="#quote">Request a Policy Review →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-block" id="quote">
+    <div class="container quote-wrap">
+
+      <div class="quote-panel">
+        <span class="badge"><span class="shield"></span> Why Work With Me</span>
+        <h2>Fast, clear, proactive help</h2>
+        <p>
+          My job is not just to throw you a quote. It’s to help you understand what you’re buying, move quickly when needed, and make sure nothing important gets missed.
+        </p>
+
+        <div class="quote-list">
+          <div class="quote-item">Fast turnaround on quotes and coverage reviews</div>
+          <div class="quote-item">Clear explanations without the usual insurance jargon</div>
+          <div class="quote-item">Support for auto, home, business, and life insurance</div>
+          <div class="quote-item">Personalized help instead of generic call-center service</div>
+          <div class="quote-item">A proactive second opinion if you already have coverage</div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <span class="eyebrow">Get a Quote</span>
+        <h2>Request a quote or coverage review</h2>
+
+        <form
+          id="leadForm"
+          action="https://formspree.io/f/xeerzpwq"
+          method="POST"
+        >
+          <div class="field">
+            <label for="name">Name *</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" />
+            </div>
+
+            <div class="field">
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="coverageType">What do you need help with?</label>
+            <select id="coverageType" name="coverage_type">
+              <option value="">Select one</option>
+              <option>Auto Insurance</option>
+              <option>Home Insurance</option>
+              <option>Business Insurance</option>
+              <option>Life Insurance</option>
+              <option>Coverage Review / Second Opinion</option>
+              <option>Multiple / Not Sure Yet</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell me a little about what you need"
+            ></textarea>
+          </div>
+
+          <input type="hidden" name="_subject" value="New Quote Request from dylanhaysbert.com" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="lead_source" value="DylanHaysbert.com homepage" />
+
+          <button class="btn btn-primary" type="submit">Send Request</button>
+
+          <div class="form-note">
+            Most responses go out within 30–60 minutes.
+          </div>
+
+          <div class="form-success" id="formSuccess">
+            Thanks — your message was sent successfully.
+          </div>
+
+          <div class="form-error" id="formError">
+            Something went wrong. Please try again or email dylan@dodgeagencyinc.com.
+          </div>
+        </form>
+
+        <div class="contact-list">
+          <div class="contact-item"><span>Phone:</span> <a href="tel:14088262465">(408) 826-2465</a></div>
+          <div class="contact-item"><span>Email:</span> <a href="mailto:dylan@dodgeagencyinc.com">dylan@dodgeagencyinc.com</a></div>
+          <div class="contact-item"><span>Serving:</span> California • Oregon • Washington</div>
+          <div class="contact-item"><span>CA Lic:</span> #4528400</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-main">
+        <strong>Dylan Haysbert</strong> — Insurance Producer<br />
+        Auto • Home • Business • Life Insurance<br />
+        Farmers Insurance — Virginia Tam Insurance Agency
+      </div>
+
+      <div class="footer-actions">
+        <a class="btn btn-secondary" href="#quote">Get a Quote</a>
+        <a class="btn btn-primary" href="tel:14088262465">Call Dylan</a>
+      </div>
     </div>
 
-    <div class="trust">
-      <span>Licensed CA</span>
-      <span>30–60 min quotes</span>
-      <span>Auto • Home • Business</span>
+    <div class="license-note">
+      Dylan Haysbert is a licensed insurance producer. California License #: 4528400.
+      Coverage review/intake only. This form does not bind, change, or modify coverage.
     </div>
   </div>
+</footer>
 
-  <div class="card">
-    <img src="images/dylan-haysbert2.png" style="width:100%; border-radius:14px;">
-  </div>
-
-</div>
-
-<div class="section">
-  <h2>What I Cover</h2>
-
-  <div class="grid">
-    <div class="item">🚗 Auto Insurance</div>
-    <div class="item">🏠 Home Insurance</div>
-    <div class="item">🏢 Business Insurance</div>
-    <div class="item">❤️ Life Insurance</div>
-  </div>
-</div>
-
-<div class="section" id="quote">
-
-  <div class="form-card">
-
-    <div>
-      <h2>Get a Quote</h2>
-      <p>Quick response. No pressure.</p>
+<div class="sticky-bar">
+  <div class="sticky-inner">
+    <div class="sticky-copy">
+      <strong>Need insurance help?</strong>
+      Tap to call Dylan or send a quick request.
     </div>
 
-    <form action="https://formspree.io/f/xeerzpwq" method="POST">
-
-      <input name="name" placeholder="Name" required>
-      <input name="email" placeholder="Email" required>
-      <input name="phone" placeholder="Phone">
-
-      <select name="type">
-        <option>Auto</option>
-        <option>Home</option>
-        <option>Business</option>
-        <option>Life</option>
-      </select>
-
-      <textarea name="message" placeholder="What do you need?"></textarea>
-
-      <button type="submit">Send Request</button>
-
-    </form>
-
+    <div class="sticky-actions">
+      <a class="call-btn" href="tel:14088262465">Call Dylan</a>
+      <a class="form-btn" href="#quote">Get Quote</a>
+    </div>
   </div>
-
 </div>
 
-<div class="footer">
-  Dylan Haysbert — Farmers Insurance
-</div>
+<script>
+const form = document.getElementById("leadForm");
+const successBox = document.getElementById("formSuccess");
+const errorBox = document.getElementById("formError");
+
+form?.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  successBox.style.display = "none";
+  errorBox.style.display = "none";
+
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalText = submitButton.textContent;
+
+  submitButton.disabled = true;
+  submitButton.textContent = "Sending...";
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { Accept: "application/json" }
+    });
+
+    if (response.ok) {
+      form.reset();
+      successBox.style.display = "block";
+    } else {
+      errorBox.style.display = "block";
+    }
+  } catch (error) {
+    errorBox.style.display = "block";
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = originalText;
+  }
+});
+</script>
 
 </body>
 </html>
