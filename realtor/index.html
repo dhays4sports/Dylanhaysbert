@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fast Insurance for Active Deals | Dylan Haysbert</title>
+
+<style>
+:root {
+  --blue: #003a8f;
+  --blue-dark: #002d70;
+  --red: #e31837;
+  --red-dark: #bb102a;
+  --text: #1f2937;
+  --muted: #64748b;
+  --bg: #f3f6fb;
+  --surface: #ffffff;
+  --border: #d8e0ec;
+  --radius: 20px;
+  --shadow: 0 18px 45px rgba(0, 58, 143, 0.14);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(0, 58, 143, 0.12), transparent 40rem),
+    linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+  color: var(--text);
+  padding-bottom: 86px;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.top {
+  background: linear-gradient(140deg, var(--blue), var(--blue-dark));
+  color: white;
+  padding: 24px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.top::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border: 28px solid rgba(255,255,255,0.08);
+  border-radius: 50%;
+  right: -70px;
+  top: -60px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.12);
+  padding: 6px 10px;
+  border-radius: 999px;
+  position: relative;
+  z-index: 1;
+}
+
+.shield {
+  width: 12px;
+  height: 12px;
+  background: var(--red);
+  clip-path: polygon(50% 0%, 92% 17%, 84% 76%, 50% 100%, 16% 76%, 8% 17%);
+}
+
+h1 {
+  position: relative;
+  z-index: 1;
+  margin: 22px 0 8px;
+  font-size: clamp(30px, 9vw, 42px);
+  line-height: .95;
+  letter-spacing: -0.04em;
+}
+
+h1 span {
+  color: var(--red);
+}
+
+.subtitle {
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  opacity: .9;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.highlight {
+  position: relative;
+  z-index: 1;
+  margin-top: 12px;
+  background: rgba(255,255,255,0.12);
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.process {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+}
+
+.process div {
+  flex: 1;
+}
+
+.process strong {
+  display: block;
+  font-size: 12px;
+}
+
+.process .active {
+  color: var(--red);
+  font-weight: 800;
+}
+
+.urgency {
+  background: #fff5f5;
+  color: var(--red);
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+}
+
+.body {
+  padding: 18px;
+}
+
+form {
+  display: grid;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+input, select, textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 13px;
+  font: inherit;
+  background: #fbfdff;
+  color: var(--text);
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(0, 58, 143, 0.12);
+  background: white;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+button {
+  border: 0;
+  border-radius: 14px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 900;
+  color: white;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(227, 24, 55, 0.25);
+}
+
+.notice {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 14px;
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  background: #fbfdff;
+}
+
+.footer strong {
+  color: var(--text);
+}
+
+.sticky-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  background: linear-gradient(140deg, var(--blue), var(--blue-dark));
+  border-top: 4px solid var(--red);
+  box-shadow: 0 -12px 30px rgba(0, 58, 143, 0.22);
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+}
+
+.sticky-inner {
+  max-width: 480px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.sticky-copy {
+  color: white;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.sticky-copy strong {
+  display: block;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+}
+
+.sticky-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.sticky-actions a {
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.call-btn {
+  background: white;
+  color: var(--blue-dark);
+}
+
+.form-btn {
+  background: var(--red);
+  color: white;
+}
+
+@media(max-width:440px){
+  .grid-2 { grid-template-columns: 1fr; }
+
+  .sticky-inner {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .sticky-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sticky-actions a {
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+  <div class="card">
+
+    <div class="top">
+      <div class="badge"><span class="shield"></span> Farmers Insurance</div>
+
+      <h1>KEEP YOUR DEALS <span>MOVING</span></h1>
+
+      <p class="subtitle">
+        Fast, deal-ready insurance quotes built to avoid last-minute escrow issues.
+      </p>
+
+      <div class="highlight">
+        30–60 minute quote turnaround in most cases
+      </div>
+    </div>
+
+    <div class="process">
+      <div><strong>Offer</strong> You find it</div>
+      <div class="active"><strong>Insurance</strong> We handle it</div>
+      <div><strong>Closing</strong> You win</div>
+    </div>
+
+    <div class="urgency">
+      Deal at risk? We move fast to save your closing.
+    </div>
+
+    <div class="body" id="quote-form">
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+        <div class="field">
+          <label for="realtor_name">Realtor Name *</label>
+          <input id="realtor_name" name="realtor_name" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="client_name">Client Name *</label>
+          <input id="client_name" name="client_name" type="text" required>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="client_phone">Client Phone *</label>
+            <input id="client_phone" type="tel" name="client_phone" required>
+          </div>
+          <div class="field">
+            <label for="client_email">Email</label>
+            <input id="client_email" type="email" name="client_email">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="property_address">Property Address</label>
+          <input id="property_address" name="property_address" type="text">
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="timeline">Timeline</label>
+            <select id="timeline" name="timeline">
+              <option value="">Select one</option>
+              <option>ASAP / Rush</option>
+              <option>Within 3 days</option>
+              <option>1–2 weeks</option>
+              <option>Flexible</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="priority">Priority</label>
+            <select id="priority" name="priority">
+              <option value="">Select one</option>
+              <option>Speed</option>
+              <option>Price</option>
+              <option>Coverage</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="notes">Anything unusual?</label>
+          <textarea id="notes" name="notes" placeholder="Tight closing, lender issue, prior quote too high, rental/condo, claims, etc."></textarea>
+        </div>
+
+        <input type="hidden" name="lead_source" value="Realtor QR page" />
+        <input type="hidden" name="producer" value="Dylan Haysbert" />
+        <input type="hidden" name="agency" value="Virginia Tam Insurance Agency" />
+
+        <button type="submit">Request Fast Quote</button>
+
+        <div class="notice">
+          No pressure — just helping the deal move smoothly.
+        </div>
+
+      </form>
+    </div>
+
+    <div class="footer">
+      <strong>Dylan Haysbert</strong><br>
+      Farmers Insurance — Virginia Tam Insurance Agency<br>
+      Coverage intake only. This form does not bind or modify coverage.
+    </div>
+
+  </div>
+</div>
+
+<div class="sticky-bar">
+  <div class="sticky-inner">
+    <div class="sticky-copy">
+      <strong>Need this fast?</strong>
+      Tap to call Dylan or send the deal details.
+    </div>
+
+    <div class="sticky-actions">
+      <a class="call-btn" href="tel:4088262465">Call Dylan</a>
+      <a class="form-btn" href="#quote-form">Send Deal Details</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
