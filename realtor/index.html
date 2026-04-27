@@ -444,17 +444,20 @@ button {
   if (timeline) {
     const decodedTimeline = decodeURIComponent(timeline);
 
-    // Set dropdown
     const select = document.getElementById("timeline");
     if (select) {
       select.value = decodedTimeline;
     }
 
-    // 🔥 RUSH MODE UI CHANGE
     if (decodedTimeline === "ASAP / Rush") {
       const urgency = document.querySelector(".urgency");
       if (urgency) {
         urgency.textContent = "🚨 RUSH DEAL — prioritizing this now.";
+      }
+
+      const submitButton = document.querySelector('button[type="submit"]');
+      if (submitButton) {
+        submitButton.textContent = "Prioritize This Deal";
       }
     }
   }
