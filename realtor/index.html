@@ -22,9 +22,7 @@
 
 * { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -102,9 +100,7 @@ h1 {
   letter-spacing: -0.04em;
 }
 
-h1 span {
-  color: var(--red);
-}
+h1 span { color: var(--red); }
 
 .subtitle {
   position: relative;
@@ -135,14 +131,8 @@ h1 span {
   font-size: 11px;
 }
 
-.process div {
-  flex: 1;
-}
-
-.process strong {
-  display: block;
-  font-size: 12px;
-}
+.process div { flex: 1; }
+.process strong { display: block; font-size: 12px; }
 
 .process .active {
   color: var(--red);
@@ -159,9 +149,24 @@ h1 span {
   border-bottom: 1px solid var(--border);
 }
 
-.body {
-  padding: 18px;
+.rush-toggle-wrap {
+  text-align: center;
+  padding: 10px 12px 0;
+  background: white;
 }
+
+.rush-toggle {
+  background: none;
+  border: none;
+  color: var(--red);
+  font-weight: 900;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 6px 8px;
+  box-shadow: none;
+}
+
+.body { padding: 18px; }
 
 form {
   display: grid;
@@ -234,9 +239,7 @@ button {
   background: #fbfdff;
 }
 
-.footer strong {
-  color: var(--text);
-}
+.footer strong { color: var(--text); }
 
 .sticky-bar {
   position: fixed;
@@ -268,7 +271,6 @@ button {
 .sticky-copy strong {
   display: block;
   font-size: 13px;
-  letter-spacing: -0.01em;
 }
 
 .sticky-actions {
@@ -308,9 +310,7 @@ button {
     grid-template-columns: 1fr 1fr;
   }
 
-  .sticky-actions a {
-    text-align: center;
-  }
+  .sticky-actions a { text-align: center; }
 }
 </style>
 </head>
@@ -342,6 +342,12 @@ button {
 
     <div class="urgency">
       Deal at risk? We move fast to save your closing.
+    </div>
+
+    <div class="rush-toggle-wrap">
+      <button class="rush-toggle" id="rushToggle" type="button">
+        🚨 Have a rush deal? Prioritize it →
+      </button>
     </div>
 
     <div class="body" id="quote-form">
@@ -437,7 +443,32 @@ button {
     </div>
   </div>
 </div>
- <script>
+
+<script>
+  function activateRushMode() {
+    const select = document.getElementById("timeline");
+    if (select) {
+      select.value = "ASAP / Rush";
+    }
+
+    const urgency = document.querySelector(".urgency");
+    if (urgency) {
+      urgency.textContent = "🚨 RUSH DEAL — prioritizing this now.";
+    }
+
+    const submitButton = document.querySelector('button[type="submit"]');
+    if (submitButton) {
+      submitButton.textContent = "Prioritize This Deal";
+    }
+
+    const notes = document.getElementById("notes");
+    if (notes && !notes.value.trim()) {
+      notes.value = "RUSH DEAL: ";
+    }
+
+    document.getElementById("quote-form")?.scrollIntoView({ behavior: "smooth" });
+  }
+
   const params = new URLSearchParams(window.location.search);
   const timeline = params.get("timeline");
 
@@ -450,17 +481,15 @@ button {
     }
 
     if (decodedTimeline === "ASAP / Rush") {
-      const urgency = document.querySelector(".urgency");
-      if (urgency) {
-        urgency.textContent = "🚨 RUSH DEAL — prioritizing this now.";
-      }
-
-      const submitButton = document.querySelector('button[type="submit"]');
-      if (submitButton) {
-        submitButton.textContent = "Prioritize This Deal";
-      }
+      activateRushMode();
     }
   }
-</script> 
+
+  const rushBtn = document.getElementById("rushToggle");
+  if (rushBtn) {
+    rushBtn.addEventListener("click", activateRushMode);
+  }
+</script>
+
 </body>
 </html>
