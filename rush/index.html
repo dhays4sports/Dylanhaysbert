@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Need Insurance Fast? | Dylan Haysbert</title>
+
+<style>
+/* SAME STYLE SYSTEM */
+:root {
+  --blue:#06265c;
+  --blue2:#003a8f;
+  --red:#e31837;
+  --text:#111827;
+  --border:#d8e0ec;
+  --bg:#f3f6fb;
+}
+
+body {
+  margin:0;
+  font-family:Inter,system-ui;
+  background:linear-gradient(180deg,#fff,var(--bg));
+}
+
+.page {
+  display:flex;
+  justify-content:center;
+  padding:14px;
+}
+
+.card {
+  max-width:470px;
+  width:100%;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:20px;
+  overflow:hidden;
+}
+
+/* HERO */
+.hero {
+  background:linear-gradient(135deg,#021230,#052559);
+  color:white;
+  padding:24px;
+}
+
+h1 {
+  margin:0;
+  font-size:46px;
+  line-height:.95;
+  text-transform:uppercase;
+}
+
+.red { color:var(--red); }
+
+.sub {
+  margin-top:14px;
+  opacity:.9;
+  font-size:16px;
+}
+
+/* BODY */
+.body { padding:20px; }
+
+.urgency {
+  text-align:center;
+  color:var(--red);
+  font-weight:900;
+  margin-bottom:14px;
+}
+
+.benefits {
+  display:grid;
+  gap:8px;
+  margin-bottom:18px;
+}
+
+.benefits div {
+  display:flex;
+  gap:8px;
+}
+
+/* FORM */
+form { display:grid; gap:10px; }
+
+input, select, textarea {
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+
+button {
+  background:var(--red);
+  color:white;
+  border:none;
+  padding:14px;
+  border-radius:14px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+/* FOOTER */
+.footer {
+  background:#06265c;
+  color:white;
+  padding:16px;
+  text-align:center;
+}
+
+a { color:inherit; text-decoration:none; }
+
+</style>
+</head>
+
+<body>
+<div class="page">
+<div class="card">
+
+<div class="hero">
+  <h1>Need Insurance <span class="red">Fast?</span></h1>
+  <p class="sub">Closing soon? Policy canceled? Need coverage today?</p>
+</div>
+
+<div class="body">
+
+<div class="urgency">
+  ⚡ I prioritize urgent requests first
+</div>
+
+<div class="benefits">
+  <div>✓ Same-day quote help</div>
+  <div>✓ Fast binder turnaround</div>
+  <div>✓ Clear next steps immediately</div>
+</div>
+
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+
+<select name="situation">
+<option value="">What’s going on?</option>
+<option>Closing soon</option>
+<option>Policy canceled</option>
+<option>Need new coverage</option>
+<option>Other</option>
+</select>
+
+<textarea name="details" placeholder="What do you need help with?"></textarea>
+
+<input type="hidden" name="lead_source" value="rush">
+
+<button>Get Immediate Help</button>
+
+</form>
+
+</div>
+
+<div class="footer">
+Dylan Haysbert • (408) 826-2465
+</div>
+
+</div>
+</div>
+</body>
+</html>
