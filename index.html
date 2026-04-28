@@ -359,104 +359,113 @@
 }
 
     .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-auto-rows: 1fr;
-      gap: 3px;
-      background: #fff;
-      min-height: 710px;
-    }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  gap: 3px;
+  background: #fff;
+  min-height: 710px;
+}
 
-    .tile {
-      position: relative;
-      overflow: hidden;
-      min-height: 350px;
-      isolation: isolate;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 38px 24px;
-      text-align: center;
-      color: #fff;
-    }
+.tile {
+  position: relative;
+  overflow: hidden;
+  min-height: 350px;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 38px 24px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-    .tile:before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      background-size: cover;
-      background-position: center;
-      transform: scale(1.02);
-      transition: transform .6s ease;
-    }
+.tile:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+  transition: transform .6s ease;
+}
 
-    .tile:after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background:
-        linear-gradient(180deg, rgba(7,25,54,.12) 0%, rgba(7,25,54,.28) 36%, rgba(7,25,54,.74) 100%),
-        radial-gradient(circle at 50% 56%, rgba(0,58,143,.18), transparent 34%);
-    }
+.tile:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(7,25,54,.12) 0%, rgba(7,25,54,.28) 36%, rgba(7,25,54,.74) 100%),
+    radial-gradient(circle at 50% 56%, rgba(0,58,143,.18), transparent 34%);
+}
 
-    .tile:hover:before {
-      transform: scale(1.07);
-    }
+.tile:hover:before {
+  transform: scale(1.07);
+}
 
-    .home:before {
-      background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1100&q=82");
-    }
+.tile:hover .tile-icon {
+  transform: translateY(-3px) scale(1.04);
+}
 
-    .auto:before {
-      background-image: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1100&q=82");
-    }
+.home:before {
+  background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1100&q=82");
+}
 
-    .life:before {
-      background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1100&q=82");
-    }
+.auto:before {
+  background-image: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1100&q=82");
+}
 
-    .business:before {
-      background-image: url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1100&q=82");
-    }
+.life:before {
+  background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1100&q=82");
+}
 
-    .tile-content {
-      width: 100%;
-      display: grid;
-      place-items: center;
-    }
+.business:before {
+  background-image: url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1100&q=82");
+}
 
-    .tile-icon {
-      width: 84px;
-      height: 84px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.96);
-      color: var(--blue-2);
-      display: grid;
-      place-items: center;
-      font-size: 38px;
-      box-shadow: 0 14px 32px rgba(0,0,0,.18);
-      margin-bottom: 18px;
-      border: 1px solid rgba(255,255,255,.82);
-    }
+.tile-content {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 1;
+}
 
-    .tile h2 {
-      margin: 0;
-      font-size: clamp(28px, 2.6vw, 38px);
-      line-height: 1;
-      letter-spacing: -.04em;
-      text-transform: uppercase;
-      text-shadow: 0 8px 20px rgba(0,0,0,.3);
-    }
+.tile-icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.96);
+  color: var(--blue-2);
+  display: grid;
+  place-items: center;
+  font-size: 38px;
+  box-shadow: 0 14px 32px rgba(0,0,0,.18);
+  margin-bottom: 18px;
+  border: 1px solid rgba(255,255,255,.82);
+  transition: transform .22s ease;
+}
 
-    .tile p {
-      margin: 10px 0 0;
-      font-size: 16px;
-      line-height: 1.35;
-      font-weight: 650;
-      text-shadow: 0 8px 20px rgba(0,0,0,.32);
-    }
+.tile h2 {
+  margin: 0;
+  font-size: clamp(28px, 2.6vw, 38px);
+  line-height: 1;
+  letter-spacing: -.04em;
+  text-transform: uppercase;
+  text-shadow: 0 8px 20px rgba(0,0,0,.3);
+}
+
+.tile p {
+  margin: 10px 0 0;
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 650;
+  text-shadow: 0 8px 20px rgba(0,0,0,.32);
+}
 
     .trust {
       width: min(1240px, calc(100% - 38px));
@@ -952,37 +961,39 @@
         <div class="disclaimer-line">▣ No pressure. No obligation. Just clear quote help.</div>
       </div>
 
-      <a class="tile home" href="/home">
-  <div class="tile-content">
-    <div class="tile-icon">⌂</div>
-    <h2>Home</h2>
-    <p>Protect what matters most.</p>
-  </div>
-</a>
+      <div class="hero-grid" id="coverage">
+  <a class="tile home" href="/home">
+    <div class="tile-content">
+      <div class="tile-icon">⌂</div>
+      <h2>Home</h2>
+      <p>Protect what matters most.</p>
+    </div>
+  </a>
 
-<a class="tile auto" href="/auto">
-  <div class="tile-content">
-    <div class="tile-icon">▭</div>
-    <h2>Auto</h2>
-    <p>Coverage for the road ahead.</p>
-  </div>
-</a>
+  <a class="tile auto" href="/auto">
+    <div class="tile-content">
+      <div class="tile-icon">▭</div>
+      <h2>Auto</h2>
+      <p>Coverage for the road ahead.</p>
+    </div>
+  </a>
 
-<a class="tile life" href="/life">
-  <div class="tile-content">
-    <div class="tile-icon">♡</div>
-    <h2>Life</h2>
-    <p>Protect your family’s future.</p>
-  </div>
-</a>
+  <a class="tile life" href="/life">
+    <div class="tile-content">
+      <div class="tile-icon">♡</div>
+      <h2>Life</h2>
+      <p>Protect your family’s future.</p>
+    </div>
+  </a>
 
-<a class="tile business" href="/business">
-  <div class="tile-content">
-    <div class="tile-icon">▣</div>
-    <h2>Business</h2>
-    <p>Protect what you’ve built.</p>
-  </div>
-</a>
+  <a class="tile business" href="/business">
+    <div class="tile-content">
+      <div class="tile-icon">▣</div>
+      <h2>Business</h2>
+      <p>Protect what you’ve built.</p>
+    </div>
+  </a>
+</div>
     </section>
 
     <section class="trust" aria-label="Trust and contact highlights">
