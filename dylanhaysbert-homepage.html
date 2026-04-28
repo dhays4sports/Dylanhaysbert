@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dylan Haysbert | California Home, Auto, Life & Business Insurance</title>
+  <meta name="description" content="California insurance quote help for home, auto, life, and business coverage through Virginia Tam Insurance Agency. Fast, clear quote support from Dylan Haysbert." />
+
+  <style>
+    :root {
+      --blue: #003a8f;
+      --blue-2: #124ec4;
+      --blue-dark: #071936;
+      --red: #e31837;
+      --text: #101827;
+      --muted: #5f6b7a;
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --border: #d8e2f0;
+      --soft-blue: #edf4ff;
+      --shadow: 0 22px 70px rgba(7, 25, 54, .12);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg) 68%, #ffffff 100%);
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(216, 226, 240, .9);
+    }
+
+    .nav {
+      width: min(1240px, calc(100% - 38px));
+      margin: 0 auto;
+      height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 26px;
+    }
+
+    .brand {
+      line-height: 1;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: clamp(22px, 2.1vw, 31px);
+      letter-spacing: -.04em;
+      font-weight: 950;
+      color: var(--blue-dark);
+    }
+
+    .brand strong span {
+      color: var(--blue-2);
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 9px;
+      font-size: 13px;
+      letter-spacing: .22em;
+      color: #38445a;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      color: #17213a;
+      font-size: 14px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+    }
+
+    .navlinks a {
+      position: relative;
+      opacity: .92;
+    }
+
+    .navlinks a:hover {
+      color: var(--blue-2);
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: #fff;
+      border-radius: 8px;
+      padding: 17px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 16px 34px rgba(0, 58, 143, .22);
+      font-weight: 950;
+      text-transform: uppercase;
+      min-width: 202px;
+      justify-content: center;
+    }
+
+    .nav-cta .ico {
+      width: 28px;
+      height: 28px;
+      border: 2px solid rgba(255,255,255,.72);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-size: 15px;
+    }
+
+    .nav-cta span {
+      display: block;
+      line-height: 1.15;
+    }
+
+    .nav-cta small {
+      display: block;
+      font-size: 12px;
+      margin-top: 4px;
+      opacity: .92;
+      letter-spacing: .04em;
+    }
+
+    .hero {
+      width: min(1240px, calc(100% - 38px));
+      margin: 0 auto;
+      min-height: calc(100vh - 92px);
+      display: grid;
+      grid-template-columns: 38% 62%;
+      align-items: stretch;
+      background: #fff;
+      box-shadow: var(--shadow);
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+    }
+
+    .hero-copy {
+      padding: clamp(34px, 4.8vw, 66px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(18,78,196,.12), transparent 38%),
+        linear-gradient(180deg, #ffffff, #f7fbff);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--blue-2);
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .05em;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow:before {
+      content: "";
+      width: 38px;
+      height: 2px;
+      background: var(--blue-2);
+      display: inline-block;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(43px, 5.3vw, 78px);
+      line-height: .96;
+      letter-spacing: -.07em;
+      color: var(--blue-dark);
+      font-weight: 1000;
+      text-transform: uppercase;
+    }
+
+    h1 span {
+      color: var(--blue-2);
+      display: block;
+    }
+
+    .sub {
+      margin: 26px 0 0;
+      max-width: 470px;
+      font-size: clamp(17px, 1.3vw, 21px);
+      line-height: 1.58;
+      color: #394456;
+      font-weight: 500;
+    }
+
+    .divider {
+      width: 58px;
+      height: 1px;
+      background: #aab7cc;
+      margin: 30px 0 22px;
+    }
+
+    .promise {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .promise-icon {
+      width: 48px;
+      height: 48px;
+      border: 3px solid var(--blue-2);
+      color: var(--blue-2);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .promise strong {
+      display: block;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      color: var(--blue-dark);
+      font-weight: 950;
+    }
+
+    .promise span {
+      display: block;
+      margin-top: 5px;
+      color: #4d596b;
+      line-height: 1.35;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 62px;
+      border-radius: 8px;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      padding: 0 24px;
+    }
+
+    .primary-btn {
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: #fff;
+      box-shadow: 0 18px 36px rgba(0, 58, 143, .24);
+      min-width: 250px;
+    }
+
+    .primary-btn small {
+      display: block;
+      margin-top: 3px;
+      font-size: 12px;
+      opacity: .9;
+    }
+
+    .secondary-btn {
+      border: 1px solid var(--border);
+      color: var(--blue-dark);
+      background: #fff;
+      min-width: 160px;
+    }
+
+    .disclaimer-line {
+      margin-top: 22px;
+      color: #536174;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 1fr;
+      gap: 3px;
+      background: #fff;
+      min-height: 710px;
+    }
+
+    .tile {
+      position: relative;
+      overflow: hidden;
+      min-height: 350px;
+      isolation: isolate;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 38px 24px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .tile:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.02);
+      transition: transform .6s ease;
+    }
+
+    .tile:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(180deg, rgba(7,25,54,.12) 0%, rgba(7,25,54,.28) 36%, rgba(7,25,54,.74) 100%),
+        radial-gradient(circle at 50% 56%, rgba(0,58,143,.18), transparent 34%);
+    }
+
+    .tile:hover:before {
+      transform: scale(1.07);
+    }
+
+    .home:before {
+      background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1100&q=82");
+    }
+
+    .auto:before {
+      background-image: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1100&q=82");
+    }
+
+    .life:before {
+      background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1100&q=82");
+    }
+
+    .business:before {
+      background-image: url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1100&q=82");
+    }
+
+    .tile-content {
+      width: 100%;
+      display: grid;
+      place-items: center;
+    }
+
+    .tile-icon {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.96);
+      color: var(--blue-2);
+      display: grid;
+      place-items: center;
+      font-size: 38px;
+      box-shadow: 0 14px 32px rgba(0,0,0,.18);
+      margin-bottom: 18px;
+      border: 1px solid rgba(255,255,255,.82);
+    }
+
+    .tile h2 {
+      margin: 0;
+      font-size: clamp(28px, 2.6vw, 38px);
+      line-height: 1;
+      letter-spacing: -.04em;
+      text-transform: uppercase;
+      text-shadow: 0 8px 20px rgba(0,0,0,.3);
+    }
+
+    .tile p {
+      margin: 10px 0 0;
+      font-size: 16px;
+      line-height: 1.35;
+      font-weight: 650;
+      text-shadow: 0 8px 20px rgba(0,0,0,.32);
+    }
+
+    .trust {
+      width: min(1240px, calc(100% - 38px));
+      margin: 0 auto 0;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: none;
+      display: grid;
+      grid-template-columns: 1.45fr 1fr 1fr 1fr 1fr;
+      align-items: center;
+      gap: 0;
+      padding: 28px 34px;
+      box-shadow: 0 26px 70px rgba(7,25,54,.08);
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding-right: 30px;
+    }
+
+    .headshot {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 50% 30%, #e8eef8 0 22%, transparent 23%),
+        radial-gradient(circle at 50% 72%, #cfd9e8 0 34%, transparent 35%),
+        linear-gradient(135deg, #eef4ff, #b9c8de);
+      border: 4px solid #eef4ff;
+      flex: 0 0 auto;
+    }
+
+    .person strong {
+      display: block;
+      font-size: 22px;
+      font-weight: 950;
+      letter-spacing: -.035em;
+      color: var(--blue-dark);
+    }
+
+    .person span {
+      display: block;
+      color: #596678;
+      margin-top: 4px;
+      font-weight: 650;
+      line-height: 1.25;
+    }
+
+    .trust-item {
+      min-height: 76px;
+      padding: 0 24px;
+      border-left: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .trust-item .symbol {
+      color: var(--blue-2);
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 18px;
+      font-weight: 950;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .trust-item span {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      line-height: 1.25;
+      color: #596678;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .farmers-mark {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .farmers-logo {
+      color: var(--blue);
+      font-weight: 1000;
+      font-size: 23px;
+      line-height: 1;
+      letter-spacing: .16em;
+    }
+
+    .farmers-logo small {
+      display: block;
+      color: var(--red);
+      letter-spacing: .28em;
+      margin-top: 8px;
+      font-size: 10px;
+      font-weight: 950;
+    }
+
+    .contact-strip {
+      width: min(1240px, calc(100% - 38px));
+      margin: 0 auto 54px;
+      background: var(--blue-dark);
+      color: #fff;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      padding: 22px 32px;
+      border-radius: 0 0 18px 18px;
+    }
+
+    .contact-strip a,
+    .contact-strip div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      font-size: 15px;
+      font-weight: 800;
+      min-height: 32px;
+    }
+
+    .contact-strip .contact-mid {
+      border-left: 1px solid rgba(255,255,255,.22);
+      border-right: 1px solid rgba(255,255,255,.22);
+    }
+
+    .section {
+      width: min(1080px, calc(100% - 38px));
+      margin: 0 auto 64px;
+      text-align: center;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(32px, 4vw, 52px);
+      letter-spacing: -.055em;
+      color: var(--blue-dark);
+      line-height: 1.03;
+    }
+
+    .section p {
+      max-width: 760px;
+      margin: 16px auto 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .quote-card {
+      width: min(900px, calc(100% - 38px));
+      margin: 0 auto 72px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 4vw, 44px);
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      color: var(--blue-dark);
+      font-weight: 850;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      margin-top: 8px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 15px 14px;
+      font: inherit;
+      color: var(--text);
+      background: #f9fbff;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--blue-2);
+      box-shadow: 0 0 0 4px rgba(18,78,196,.1);
+      background: #fff;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-note {
+      grid-column: 1 / -1;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+      text-align: left;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .submit {
+      grid-column: 1 / -1;
+      min-height: 60px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: #fff;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      box-shadow: 0 18px 36px rgba(0, 58, 143, .24);
+    }
+
+    footer {
+      width: min(1080px, calc(100% - 38px));
+      margin: 0 auto 34px;
+      color: #647187;
+      font-size: 12px;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    @media (max-width: 1060px) {
+      .navlinks {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        min-height: auto;
+      }
+
+      .trust {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .person {
+        grid-column: 1 / -1;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 20px;
+      }
+
+      .trust-item {
+        border-left: none;
+        background: #f8fbff;
+        border-radius: 14px;
+      }
+
+      .farmers-mark {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        height: auto;
+        padding: 18px 0;
+      }
+
+      .brand small {
+        font-size: 10px;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero,
+      .trust,
+      .contact-strip,
+      .section,
+      .quote-card,
+      footer {
+        width: calc(100% - 24px);
+      }
+
+      .hero-copy {
+        padding: 34px 24px;
+      }
+
+      h1 {
+        font-size: 45px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tile {
+        min-height: 250px;
+      }
+
+      .trust {
+        grid-template-columns: 1fr;
+        padding: 22px;
+      }
+
+      .trust-item {
+        padding: 18px;
+      }
+
+      .contact-strip {
+        grid-template-columns: 1fr;
+        border-radius: 0 0 16px 16px;
+      }
+
+      .contact-strip .contact-mid {
+        border: none;
+        border-top: 1px solid rgba(255,255,255,.18);
+        border-bottom: 1px solid rgba(255,255,255,.18);
+        padding: 12px 0;
+        margin: 12px 0;
+      }
+
+      form {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#" class="brand" aria-label="Dylan Haysbert homepage">
+        <strong>DYLAN <span>HAYSBERT</span></strong>
+        <small>Farmers Insurance</small>
+      </a>
+
+      <div class="navlinks">
+        <a href="#">Home</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#quote">Quote</a>
+        <a href="tel:14088262465">Contact</a>
+      </div>
+
+      <a class="nav-cta" href="#quote">
+        <span class="ico">↗</span>
+        <span>Get My Quote<small>30–60 min help</small></span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Insurance homepage hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Home. Auto. Life. Business.</div>
+
+        <h1>
+          Complete Coverage.
+          <span>Fewer Gaps.</span>
+          <span>More Peace</span>
+          <span>of Mind.</span>
+        </h1>
+
+        <p class="sub">
+          Insurance isn’t just about having a policy — it’s about having the right protection in place when it matters most.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="promise">
+          <div class="promise-icon">◷</div>
+          <div>
+            <strong>Quote help in 30–60 minutes when available</strong>
+            <span>Personalized, clear, and built around what you actually need covered.</span>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a class="primary-btn" href="#quote">
+            Get My Quote <span>→</span>
+          </a>
+          <a class="secondary-btn" href="sms:+14088262465">
+            Text Dylan
+          </a>
+        </div>
+
+        <div class="disclaimer-line">▣ No pressure. No obligation. Just clear quote help.</div>
+      </div>
+
+      <div class="hero-grid" id="coverage">
+        <article class="tile home">
+          <div class="tile-content">
+            <div class="tile-icon">⌂</div>
+            <h2>Home</h2>
+            <p>Protect what matters most.</p>
+          </div>
+        </article>
+
+        <article class="tile auto">
+          <div class="tile-content">
+            <div class="tile-icon">▭</div>
+            <h2>Auto</h2>
+            <p>Coverage for the road ahead.</p>
+          </div>
+        </article>
+
+        <article class="tile life">
+          <div class="tile-content">
+            <div class="tile-icon">♡</div>
+            <h2>Life</h2>
+            <p>Protect your family’s future.</p>
+          </div>
+        </article>
+
+        <article class="tile business">
+          <div class="tile-content">
+            <div class="tile-icon">▣</div>
+            <h2>Business</h2>
+            <p>Protect what you’ve built.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="trust" aria-label="Trust and contact highlights">
+      <div class="person">
+        <div class="headshot" aria-hidden="true"></div>
+        <div>
+          <strong>Dylan Haysbert</strong>
+          <span>Insurance Producer<br />Virginia Tam Insurance Agency</span>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="symbol">☑</div>
+        <div>
+          <strong>California</strong>
+          <span>Insurance support</span>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="symbol">◇</div>
+        <div>
+          <strong>Coverage</strong>
+          <span>Home / Auto / Life / Business</span>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="symbol">⚡</div>
+        <div>
+          <strong>Fast Help</strong>
+          <span>Clear quote support</span>
+        </div>
+      </div>
+
+      <div class="trust-item farmers-mark">
+        <div class="farmers-logo">
+          FARMERS
+          <small>INSURANCE</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-strip" aria-label="Contact Dylan">
+      <a href="tel:14088262465">☎ (408) 826-2465</a>
+      <a class="contact-mid" href="mailto:dylan@dylanhaysbert.com">✉ dylan@dylanhaysbert.com</a>
+      <div>⌖ Serving California</div>
+    </section>
+
+    <section class="section">
+      <h2>One clean place to start.</h2>
+      <p>
+        Whether you’re protecting a home, vehicle, family, rental, or business, the goal is simple:
+        find the right coverage structure before the gap becomes expensive.
+      </p>
+    </section>
+
+    <section class="quote-card" id="quote" aria-label="Quote request form">
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <label>
+          Name
+          <input type="text" name="name" autocomplete="name" required />
+        </label>
+
+        <label>
+          Phone
+          <input type="tel" name="phone" autocomplete="tel" required />
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" autocomplete="email" />
+        </label>
+
+        <label>
+          Coverage Needed
+          <select name="coverage_needed" required>
+            <option value="">Select one</option>
+            <option>Home Insurance</option>
+            <option>Auto Insurance</option>
+            <option>Life Insurance</option>
+            <option>Business Insurance</option>
+            <option>Multiple Policies / Bundle</option>
+          </select>
+        </label>
+
+        <label class="full">
+          What are you looking to protect?
+          <textarea name="message" placeholder="Example: Home and auto bundle, rental property, business policy, life insurance, etc."></textarea>
+        </label>
+
+        <p class="form-note">
+          By submitting this form, you agree to be contacted by Dylan Haysbert / Virginia Tam Insurance Agency regarding your insurance request. Message and data rates may apply. Availability, eligibility, coverage, and discounts vary by state and underwriting guidelines.
+        </p>
+
+        <button class="submit" type="submit">Request My Quote</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    Insurance products offered through Virginia Tam Insurance Agency. Farmers Insurance branding and marks belong to their respective owners and should be used only in accordance with approved brand and compliance guidelines.
+    This page is a draft template and should be reviewed for agency, carrier, and state compliance before publishing.
+  </footer>
+</body>
+</html>
