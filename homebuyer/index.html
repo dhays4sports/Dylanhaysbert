@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Home Insurance for Closing | Dylan Haysbert</title>
+
+<style>
+:root {
+  --blue:#06265c;
+  --red:#e31837;
+  --border:#d8e0ec;
+}
+
+body {
+  margin:0;
+  font-family:Inter,system-ui;
+  background:linear-gradient(180deg,#fff,#f3f6fb);
+}
+
+.page { display:flex; justify-content:center; padding:14px; }
+
+.card {
+  max-width:470px;
+  width:100%;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.hero {
+  background:#021230;
+  color:white;
+  padding:24px;
+}
+
+h1 {
+  margin:0;
+  font-size:40px;
+  line-height:1;
+}
+
+.red { color:var(--red); }
+
+.sub {
+  margin-top:12px;
+  opacity:.9;
+}
+
+/* BODY */
+.body { padding:20px; }
+
+.warning {
+  color:var(--red);
+  font-weight:800;
+  margin-bottom:14px;
+  text-align:center;
+}
+
+.benefits {
+  display:grid;
+  gap:8px;
+  margin-bottom:18px;
+}
+
+.benefits div {
+  display:flex;
+  gap:8px;
+}
+
+/* FORM */
+form { display:grid; gap:10px; }
+
+input, textarea {
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+
+button {
+  background:var(--red);
+  color:white;
+  border:none;
+  padding:14px;
+  border-radius:14px;
+  font-weight:900;
+}
+
+/* FOOTER */
+.footer {
+  background:#06265c;
+  color:white;
+  padding:16px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+<div class="card">
+
+<div class="hero">
+  <h1>Buying a Home?<br><span class="red">Don’t Let Insurance Delay Closing</span></h1>
+  <p class="sub">I help get your insurance set up correctly—fast.</p>
+</div>
+
+<div class="body">
+
+<div class="warning">
+⚠ Insurance is one of the most common closing delays
+</div>
+
+<div class="benefits">
+  <div>✓ Quote turned around quickly</div>
+  <div>✓ Coverage matched to lender requirements</div>
+  <div>✓ Clear next steps so nothing gets held up</div>
+</div>
+
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+
+<textarea name="details" placeholder="Property address or what you need help with"></textarea>
+
+<input type="hidden" name="lead_source" value="homebuyer">
+
+<button>Get My Home Insurance Set Up</button>
+
+</form>
+
+</div>
+
+<div class="footer">
+Dylan Haysbert • (408) 826-2465
+</div>
+
+</div>
+</div>
+</body>
+</html>
