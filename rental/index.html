@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rental Coverage Check | Dylan Haysbert</title>
+
+<style>
+:root {
+  --blue:#06265c;
+  --red:#e31837;
+  --border:#d8e0ec;
+}
+
+body {
+  margin:0;
+  font-family:Inter,system-ui;
+  background:linear-gradient(180deg,#fff,#f3f6fb);
+}
+
+.page { display:flex; justify-content:center; padding:14px; }
+
+.card {
+  max-width:470px;
+  width:100%;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:20px;
+  overflow:hidden;
+}
+
+/* HERO */
+.hero {
+  background:#021230;
+  color:white;
+  padding:24px;
+}
+
+h1 {
+  margin:0;
+  font-size:42px;
+  line-height:1;
+}
+
+.red { color:var(--red); }
+
+.sub {
+  margin-top:12px;
+  opacity:.9;
+}
+
+/* BODY */
+.body { padding:20px; }
+
+.pain {
+  margin-bottom:14px;
+  font-weight:600;
+}
+
+.pain div {
+  margin-bottom:6px;
+}
+
+/* FORM */
+form { display:grid; gap:10px; }
+
+input, textarea {
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+
+button {
+  background:var(--red);
+  color:white;
+  border:none;
+  padding:14px;
+  border-radius:14px;
+  font-weight:900;
+}
+
+/* FOOTER */
+.footer {
+  background:#06265c;
+  color:white;
+  padding:16px;
+  text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+<div class="page">
+<div class="card">
+
+<div class="hero">
+  <h1>Is Your Rental <span class="red">Actually Covered?</span></h1>
+  <p class="sub">Most landlord policies miss key protections.</p>
+</div>
+
+<div class="body">
+
+<div class="pain">
+  <div>⚠ Loss of rent gaps</div>
+  <div>⚠ Liability exposure</div>
+  <div>⚠ Water damage limits</div>
+</div>
+
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+
+<textarea name="properties" placeholder="Tell me about your rental(s)"></textarea>
+
+<input type="hidden" name="lead_source" value="rental">
+
+<button>Check My Coverage</button>
+
+</form>
+
+</div>
+
+<div class="footer">
+Dylan Haysbert • (408) 826-2465
+</div>
+
+</div>
+</div>
+</body>
+</html>
