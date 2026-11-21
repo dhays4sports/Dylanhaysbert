@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalUrl": "https://dylanhaysbert.com/resume/",
+  "person": {
+    "@id": "https://dylanhaysbert.com/#person",
+    "name": "Dylan Haysbert",
+    "url": "https://dylanhaysbert.com/about/",
+    "location": "San Francisco Bay Area, California"
+  },
+  "experience": [
+    {
+      "role": "Insurance Producer",
+      "organization": "Virginia Tam Insurance Agency, Inc.",
+      "location": "Fremont, California",
+      "status": "current",
+      "responsibilities": [
+        "Help California clients prepare for coverage reviews by organizing their insurance questions before a conversation.",
+        "Support review journeys for buyers and existing policyholders, including closing and renewal situations."
+      ],
+      "evidenceUrl": "https://408farmers.com/"
+    }
+  ],
+  "projects": [
+    {
+      "name": "CoverageFit",
+      "contribution": "Product development",
+      "status": "public educational screening experience",
+      "description": "Developing an educational screening experience that helps visitors organize questions before an insurance review.",
+      "evidenceUrl": "https://www.coveragefit.com/about/"
+    },
+    {
+      "name": "NameAisle",
+      "contribution": "Gallery direction",
+      "status": "public gallery",
+      "description": "Set the direction for a domain gallery that presents possible uses alongside an inquiry path.",
+      "evidenceUrl": "https://nameaisle.com/"
+    }
+  ],
+  "documentType": "professionalOverview"
+}
